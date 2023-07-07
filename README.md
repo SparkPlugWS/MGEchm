@@ -91,7 +91,7 @@
   </table>
 
   <h2>相关链接</h2>
-  在线版网址：（待补）<a href=""></a><br>
+  在线版网址：<a href="https://sparkplugws.github.io/index.htm">https://sparkplugws.github.io/index.htm</a><br>
   魔物娘图鉴中文维基：
   <a
     href="https://zhmonstergirlencyclopedia.miraheze.org/wiki/%E9%AD%94%E7%89%A9%E5%A8%98%E5%9B%BE%E9%89%B4%E4%B8%AD%E6%96%87%E7%BB%B4%E5%9F%BA%E7%A4%BE%E5%8C%BA">
