@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Precision Helper 2.0.1">
+<!-- Sitemap 1.0 -->
+</HEAD>
+<BODY>
+    <OBJECT type="text/site properties">
+      <param name="FrameName" value="right">
+      <param name="Window Styles" value="0x00800025">
+      <param name="comment" value="title:魔物娘图鉴及世界导游书整理">
+      <param name="comment" value="base:">
+    </OBJECT>
+    <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="写在前面">
+          <param name="Local" value="写在前面.htm">
+        </OBJECT>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="《魔物娘图鉴》">
+          <param name="Local" value="MGE1\《魔物娘图鉴》.htm">
+        </OBJECT>
+        <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="目录">
+              <param name="Local" value="MGE1\目录1.htm">
+            </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="资料·魔物">
+              <param name="Local" value="MGE1\资料魅魔.htm">
+            </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="1.魅魔">
+              <param name="Local" value="MGE1\01魅魔.htm">
+            </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="2.次级魅魔">
+              <param name="Local" value="MGE1\02次级魅魔.htm">
+            </OBJECT>
+        </UL>
+    </UL>
+</BODY>
+</HTML>
