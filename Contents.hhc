@@ -154,6 +154,68 @@
               <param name="Local" value="MGE1\29É³ÂÞÂüÉß.htm">
             </OBJECT>
         </UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="¡¶ÊÀ½çµ¼ÓÎÊé3-Èø°ÍË¹Ä§µ¼Êé¡·">
+          <param name="Local" value="WG3\¡¶ÊÀ½çµ¼ÓÎÊé3-Èø°ÍË¹Ä§µ¼Êé¡·.htm">
+        </OBJECT>
+        <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Èø°ÍË¹Ãû²¾~±³µÂµÄÄ§ÊÞÓëÐ¡Ð¡Ä§Å®µÄ¼¯»á">
+              <param name="Local" value="WG3\Èø°ÍË¹Ãû²¾-Ä¼¼¯ÊÂÏî.htm">
+            </OBJECT>
+            <UL>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Ä§Íõ¾üÈø°ÍË¹">
+                  <param name="Local" value="WG3\Èø°ÍË¹Ãû²¾-Ä§Íõ¾üÈø°ÍË¹.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="¿âÂå·Æ¶û¡¤Èø°ÍË¹">
+                  <param name="Local" value="WG3\Èø°ÍË¹Ãû²¾-¿âÂå·Æ¶û¡¤Èø°ÍË¹.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="ÄªÄªÄÝ¿¨¡¤Èø°ÍË¹">
+                  <param name="Local" value="WG3\Èø°ÍË¹Ãû²¾-ÄªÄªÄÝ¿¨¡¤Èø°ÍË¹.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Ï£Âå¿ËÍÐ¡¤Èø°ÍË¹">
+                  <param name="Local" value="WG3\Èø°ÍË¹Ãû²¾-Ï£Âå¿ËÍÐ¡¤Èø°ÍË¹.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Â¶ß÷¡¤Â¶ß÷¡¤Èø°ÍË¹">
+                  <param name="Local" value="WG3\Èø°ÍË¹Ãû²¾-Â¶ß÷¡¤Â¶ß÷¡¤Èø°ÍË¹.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="ÂÜÆÕÂåÌØ¡¤Èø°ÍË¹">
+                  <param name="Local" value="WG3\Èø°ÍË¹Ãû²¾-ÂÜÆÕÂåÌØ¡¤Èø°ÍË¹.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="ÂêÂ¶ÄÝ¡¤Èø°ÍË¹">
+                  <param name="Local" value="WG3\Èø°ÍË¹Ãû²¾-ÂêÂ¶ÄÝ¡¤Èø°ÍË¹.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="¹ÅÀ×ÒÁÀòÑÅ¡¤Èø°ÍË¹">
+                  <param name="Local" value="WG3\Èø°ÍË¹Ãû²¾-¹ÅÀ×ÒÁÀòÑÅ¡¤Èø°ÍË¹.htm">
+                </OBJECT>
+            </UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Ä¿Â¼">
+              <param name="Local" value="WG3\Ä¿Â¼.htm">
+            </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Ä§Á¦¸ÅÂÛ">
+              <param name="Local" value="WG3\Ä§Á¦¸ÅÂÛ.htm">
+            </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="´óÄ§·¨´Çµä">
+              <param name="Local" value="WG3\´óÄ§·¨´Çµä.htm">
+            </OBJECT>
+            <UL>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="¹ÅÊ½Ä§·¨">
+                  <param name="Local" value="WG3\¹ÅÊ½Ä§·¨.htm">
+                </OBJECT>
+            </UL>
+        </UL>
     </UL>
 </BODY>
 </HTML>
