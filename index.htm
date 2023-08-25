@@ -1,0 +1,25 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+  <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <TITLE>魔物娘图鉴及世界导游书整理</TITLE>
+  <script type="text/javascript" language="JavaScript">
+    function DoOnLoad()
+    {
+      var filename = left.location.pathname.substring(left.location.pathname.replace(/\\/gi, "\/").lastIndexOf('/')+1);
+      if (filename == 'wh_search.htm')
+        left.checkHighlight();
+    }
+  </script>
+</HEAD>
+<frameset rows="27,*" framespacing="0">
+  <frame name="head" scrolling="no" noresize="noresize" src="wh_head.htm" frameborder="0">
+  <frameset cols="25%,*" framespacing="1">
+    <frame name="left" src="wh_toc.htm" frameborder="0">
+    <frame name="right" src="写在前面.htm" frameborder="0" onload="DoOnLoad()">
+    <noframes>
+      Your browser does not handle frames! This feature is needed to view this WebHelp manual.
+    </noframes>
+  </frameset>
+</frameset>
+</HTML>
