@@ -1,0 +1,232 @@
+
+@media screen and (min-width: 768px) {
+    .content {
+      width: 768px;
+    }
+  }
+
+  /* 设置最小视窗宽度 */
+  @media screen and (min-width: 1024px) {
+    .content {
+      width: 1024px;
+      margin: 0,auto;
+    }
+  }
+
+body {
+    background-color: #c3bcb243;
+    
+    font-family: "Palatino Linotype", "Book Antiqua", "Nimbus Roman No9 L", "Times New Roman", "serif";
+    justify-content: center;
+    align-items: center;
+    margin :0 auto;
+    height: 80vh;
+    max-width: 75%;
+  }
+
+header {
+    position: static;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  header h1 {
+    text-align: center;
+    margin : 0,auto;
+    padding: 0;
+    font-size: 28px;
+  }
+
+
+
+article {
+    border: 1px solid rgb(200, 135, 50) ;
+    background-color: rgb(238,232,208) ;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  article div h1{
+    color: #bd44cd;
+    font-family: "Microsoft YaHei", "微软雅黑", "Heiti SC", "黑体", "Noto Sans SC", "宋体", sans-serif;
+  }
+
+  .content{
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    columns: 2;
+    column-count: 2;
+    column-gap: 1em;
+    column-rule: #da9f09 2px solid;
+
+  }
+
+  .content p{
+
+    text-indent: 2em;
+  }
+
+aside {
+    position: fixed;
+    width: auto;
+    margin-left: 3%;
+    margin-top: 5%;
+    height: 50vh;
+    /* background-color: #f5f5f5; */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-x: auto;
+    
+  }
+
+  /* 使侧边栏自动收起 */
+  .toggle-aside {
+    display: none;
+  }
+  
+  .toggle-aside:hover {
+    cursor: pointer;
+  }
+  
+  .toggle-aside:checked {
+    display: none;
+  }
+  
+  .aside-container {
+    display: none;
+  }
+  
+  article p{
+    text-indent: 2em;
+  }
+
+
+
+a{
+    color:rgb(121, 35, 202)
+}
+
+  a:hover {
+    color: #db4f48;
+  }
+
+  a:active{
+    color: #bd44cd;
+  }
+
+  a:visited{
+  color: #d063e3;
+  }
+
+
+#search-form {
+    display: flex;
+    justify-content: left;
+    border-radius: 5px;
+  }
+  
+  #search-input {
+    width: 30%;
+    max-width: 300px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  
+  #search-form button {
+    margin-left: 1px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+
+  }
+  
+  #search-form button:hover {
+    background-color: #0056b3;
+  }
+
+
+  @keyframes flip-page {
+    0% {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+    50% {
+      transform: perspective(1000px) rotateY(-180deg);
+    }
+    100% {
+      transform: perspective(1000px) rotateY(-180deg);
+    }
+  }
+  
+  /* 应用到具体的元素上 */
+  .flip-link {
+    position: relative;
+    width: 200px; /* 根据实际需求调整页面宽度 */
+    height: 300px; /* 根据实际需求调整页面高度 */
+    perspective: 1000px;
+  }
+  
+  .flip-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* 避免背面内容可见 */
+    transition: transform 1s ease-in-out;
+  }
+  
+  .flip-page-front {
+    background-color: #fff; /* 前面页面的颜色 */
+    z-index: 2;
+  }
+  
+  .flip-page-back {
+    background-color: #f0f0f0; /* 后面页面的颜色 */
+    transform: rotateY(180deg); /* 初始时让背面朝向用户 */
+  }
+  
+  /* 触发翻页动画 */
+  .flip-link:hover .flip-page,
+  .flip-link:focus .flip-page {
+    animation: flip-page 1s forwards;
+  }
+
+
+/* 添加图片样式 */
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.thumbnail {
+    width: 200px; /* 缩略图的宽度 */
+    height: auto; /* 保持图片的宽高比 */
+    cursor: pointer; /* 鼠标悬停时显示为指针 */
+}
+
+.full-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -100%);
+    width: 80vh; /* 完整显示图片的宽度 */
+    height: auto; /* 保持图片的宽高比 */
+    background-color: rgba(255, 255, 255, 0.9); /* 背景颜色和透明度 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    border: 2px solid #ccc; /* 边框 */
+    padding: 10px; /* 内边距 */
+    z-index: 1000; /* 确保图片在最上层 */
+    display: none; /* 默认隐藏 */
+}
+
+.image-container:hover .full-image {
+    display: block; /* 鼠标悬停时显示完整图片 */
+}
