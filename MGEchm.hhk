@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!--Sitemap 1.0-->
+</HEAD><BODY>
+<OBJECT type="text /site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type = "text/sitemap">
+		<param name ="Name" value="目录">
+		<param name ="Local" value="_index.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MGEchm">
+		<param name="Local" value="_MGEchm.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="写在前面">
+		<param name="Local" value="MGE1/mge1.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="魔物娘图鉴1">
+		<param name="Local" value="MGE1/_MGE1.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="序言">
+		<param name="Local" value="MGE1/preface.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="目录">
+		<param name="Local" value="MGE1/catalog.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="魔物">
+		<param name="Local" value="MGE1/MW.html">
+		</OBJECT>
+</UL>
+</BODY></HTML>

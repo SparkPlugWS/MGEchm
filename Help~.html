@@ -1,0 +1,1919 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<!-- saved from url=(0016)http://localhost -->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>
+帮助文档
+</title>
+<meta name="info" content="Help~.md" >
+<meta name="viewport" content="width=device-width, user-scalable=yes" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link id='theme_link' rel="stylesheet" href="lesson_light.css" type="text/css">
+<Style>
+h1 {
+border-bottom-left-radius: 10px;   /*左下角圆角效果，IE8以下无效*/
+border-bottom-right-radius: 10px;  /*右下角圆角效果，IE8以下无效*/
+-moz-box-shadow: 0 0 0.3em #888;     /*阴影效果，是否有效取决于浏览器是否支持*/
+-webkit-box-shadow: 0 0 0.3em #888;  /*阴影效果，是否有效取决于浏览器是否支持*/
+}
+</Style>
+<script src="jquery-1.7.0.min.js"></script><script>
+function ShowPage()
+{
+document.getElementById('content').style.visibility = "visible";
+document.body.style.fontSize = 16+'px';
+}
+function HidePage()
+{
+document.getElementById('content').style.visibility = "hidden";
+}var theme_css_prefix = 'lesson_';var path_prefix = '';
+function ShowImages()
+{
+    imgs = document.getElementsByTagName('img');
+    imgsnum = imgs.length;
+    for (imgi = 0; imgi < imgsnum; imgi++)
+    {
+        if ((typeof(imgs[imgi].src) == 'undefined' || imgs[imgi].src == '') &&
+             imgs[imgi].getAttribute('thissrc') != null)
+            imgs[imgi].src = imgs[imgi].getAttribute('thissrc');
+    }
+}
+
+function HideImages()
+{
+    imgs = document.getElementsByTagName('img');
+    imgsnum = imgs.length;
+    for (imgi = 0; imgi < imgsnum; imgi++)
+    {
+        if (typeof(imgs[imgi].src) != 'undefined' && imgs[imgi].src != '')
+            imgs[imgi].thissrc = imgs[imgi].getAttribute('src');
+            imgs[imgi].src = '';
+    }
+}
+
+function SwitchTheme()
+{
+    var css = document.getElementById('theme_link');
+    var custom_css = document.getElementById('custom_theme_link');
+    var menu_css = document.getElementById('menu_theme_link');
+    var custom_menu_css = document.getElementById('custom_menu_theme_link');
+    var url;
+    var custom_url;
+    var menu_url;
+    var custom_menu_url;
+    if (theme_css_prefix != 'presentation_'){ theme_css_prefix = 'lesson_' }
+    var theme = 'light';
+	if (/.*_dark.css$/.test(css.getAttribute('href'))) theme = 'dark';
+    if (theme == 'light')
+    {
+        url = path_prefix + theme_css_prefix + 'dark.css';
+        custom_url = path_prefix + 'custom_' + theme_css_prefix + 'dark.css';
+        menu_url = path_prefix + 'menu_dark.css';
+        custom_menu_url = path_prefix + 'custom_menu_dark.css';
+        window.name = 'dark';
+    }
+    else
+    {
+        url = path_prefix + theme_css_prefix + 'light.css';
+        custom_url = path_prefix + 'custom_' + theme_css_prefix + 'light.css';
+        menu_url = path_prefix + 'menu_light.css';
+        custom_menu_url = path_prefix + 'custom_menu_light.css';
+        window.name = 'light';
+    }
+    if (css) css.setAttribute('href', url);
+    if (custom_css) custom_css.setAttribute('href', custom_url);
+    if (menu_css) menu_css.setAttribute('href', menu_url);
+    if (custom_menu_css) custom_menu_css.setAttribute('href', custom_menu_url);
+}
+
+function LoadTheme(new_theme)
+{
+    var css = document.getElementById('theme_link');
+    var custom_css = document.getElementById('custom_theme_link');
+    var menu_css = document.getElementById('menu_theme_link');
+    var custom_menu_css = document.getElementById('custom_menu_theme_link');
+    var url;
+    var custom_url;
+    var menu_url;
+    var custom_menu_url;
+    if(theme_css_prefix != 'presentation_'){ theme_css_prefix = 'lesson_' }
+    var theme = 'light';
+	if (/.*_dark.css$/.test(css.getAttribute('href'))) theme = 'dark';
+    if (new_theme && new_theme != theme)
+    {
+        if (new_theme == 'dark')
+        {
+            url = path_prefix + theme_css_prefix + 'dark.css';
+            custom_url = path_prefix + 'custom_' + theme_css_prefix + 'dark.css';
+            menu_url = path_prefix + 'menu_dark.css';
+            custom_menu_url = path_prefix + 'custom_menu_dark.css';
+        }
+        else
+        {
+            url = path_prefix + theme_css_prefix + 'light.css';
+            custom_url = path_prefix + 'custom_' + theme_css_prefix + 'light.css';
+            menu_url = path_prefix + 'menu_light.css';
+            custom_menu_url = path_prefix + 'custom_menu_light.css';
+        }
+        if (css) css.setAttribute('href', url);
+        if (custom_css) custom_css.setAttribute('href', custom_url);
+        if (menu_css) menu_css.setAttribute('href', menu_url);
+        if (custom_menu_css) custom_menu_css.setAttribute('href', custom_menu_url);
+    }
+}
+
+function LoadUserSelectedTheme()
+{
+    if(window.name == 'dark' || window.name == 'light')
+    {
+    LoadTheme(window.name);
+    }
+}
+</script>
+</head>
+<body onLoad="ShowPage()">
+<p style="visibility: collapse;"><span id="__TOP_4E4ABC53-B143-46FF-93CF-F9381EAD8E14__" class="anchor"></span></p><div style="text-align:right"><span class="pageheader"></span><a onclick="print()" style="visibility: hidden"></a></div><div id="printArea"><p class='fileheader' id='file_header'>帮助文档</p><hr class="headerline"/><div id="content"><script language="javascript">function print() {$("#printArea").jqprint({importCSS: true});}</script><script>function getHeight(){return document.body.scrollHeight;}</script><script>function copyChoiceQuestion(examDiv,questionTitleId,questionChoice0Id,questionChoice1Id,questionChoice2Id,questionChoice3Id)
+{
+var qTitle=document.getElementById(questionTitleId);
+var qChoiceText0="",qChoiceText1="",qChoiceText2="",qChoiceText3="";var qChoice0=document.getElementById(questionChoice0Id);
+if(qChoice0){ qChoiceText0="A." + qChoice0.innerText + "\r\n";}var qChoice1=document.getElementById(questionChoice1Id);
+if(qChoice1){ qChoiceText1="B." + qChoice1.innerText + "\r\n";}var qChoice2=document.getElementById(questionChoice2Id);
+if(qChoice2){ qChoiceText2="C." + qChoice2.innerText + "\r\n";}var qChoice3=document.getElementById(questionChoice3Id);
+if(qChoice3){ qChoiceText3="D." + qChoice3.innerText + "\r\n";}var ta = document.createElement('textarea');
+ta.value = qTitle.innerText + "\r\n" + qChoiceText0 + qChoiceText1 + qChoiceText2 + qChoiceText3 + "\r\n";
+examDiv.appendChild(ta);
+ta.select();
+document.execCommand("Copy");
+ta.style.display = 'none';
+alert('已复制');
+}
+</script><script>function copyFillBlankQuestion(examDiv,questionTitleId)
+{
+var qTitle=document.getElementById(questionTitleId);
+var ta = document.createElement('textarea');
+ta.value = qTitle.innerText + "\r\n";
+examDiv.appendChild(ta);
+ta.select();
+document.execCommand("Copy");
+ta.style.display = 'none';
+alert('已复制');
+}
+</script><script>function getHtml()
+{
+var html = $('html').clone();
+var htmlString = html.html();
+return htmlString;
+}
+</script><p>本程序是一个定制的简易 Markdown 文本编辑器，支持在一个指定的工作区目录下进行结构化的文档编辑工作。</p>
+<h1 class='title' id='title1' title='点击展开/折叠'><span id='header_span1' class='header_span'>◆ </span>1.起因</h1><script>$(document).ready(function(){$("#title1").click(function(){$("#panel1").toggle();if($("#panel1").is(":hidden")){$("#header_span1").html('◆ ');}else{$("#header_span1").html('◇ ');}});});</script><div class='panel_title_h1' id='panel1' style='display: none;'>
+<p>2012年底，因为科代表陈慧在我面前大发其火，抱怨历史课要背的东西太多，于是决定做个 Android 手机应用来方便学生背书。在这个过程中接触了 Markdown（我用它来写教程）。因为当时使用的是 Eclipse 插件来写 Markdown 的，不能脱离 Eclipse 环境，而且当时使用的是 Java 版的 Markdown 编译器，不能提供某些我需要的功能，总觉得有些不方便。于是想到做个独立的 Markdown 编辑器，这样就可以脱离 Eclipse 开发环境使用了。</p>
+<p>因为对 C#/WPF 更加熟悉些，再加上对 Eclipse 的插件体系毕竟不是太熟悉，所以还是决定使用 C#/WPF 来开发——反正 Markdown 也有 C# 语言实现的编译器可用，我改造一下即可。大约在2013年暑期以 MarkdownSharp 为基础开始制作这个 C#/WPF 版的 Markdown Editor。由于不擅长正则表达式，所以没有修改 MarkdownSharp 的源代码，而是在 MarkdownSharp 的基础上附加了一些处理。</p>
+<p>期间因为存在一些技术上的难点（主要是预览界面无法重叠，没办法实现多页面），所以这个项目一度几乎被放弃。但2015年底，意外地发现了解决问题的办法，于是又捡起来开发，直到2016年初才基本完成。</p>
+</div><h1 class='title' id='title2' title='点击展开/折叠'><span id='header_span2' class='header_span'>◆ </span>2.关于主题配色的说明</h1><script>$(document).ready(function(){$("#title2").click(function(){$("#panel2").toggle();if($("#panel2").is(":hidden")){$("#header_span2").html('◆ ');}else{$("#header_span2").html('◇ ');}});});</script><div class='panel_title_h1' id='panel2' style='display: none;'>
+<p>因为眼睛受不了，一度曾将主界面设置成以黑色为主，但结果发现效果并不比白色更好。晚上使用时黑色背景在我的液晶屏上不太清楚，要花力气去观察菜单文本。这样一段时间后，眼睛更疼了。所以又将主界面背景改为灰色为主。</p>
+</div><h1 class='title' id='title3' title='点击展开/折叠'><span id='header_span3' class='header_span'>◆ </span>3.第三方库、源码与开发工具</h1><script>$(document).ready(function(){$("#title3").click(function(){$("#panel3").toggle();if($("#panel3").is(":hidden")){$("#header_span3").html('◆ ');}else{$("#header_span3").html('◇ ');}});});</script><div class='panel_title_h1' id='panel3' style='display: none;'>
+<p>本程序使用了诸多开源项目的二进制分发包或源代码，谨此向这些代码的提供者表示感谢。</p>
+<p><strong>本程序使用的开源项目包括:</strong></p>
+<ul>
+<li><a href="http://betterwpfcontrols.codeplex.com/">BetterWpfControls</a>。</li>
+</ul>
+<p class="comment">Microsoft Public License (Ms-PL)</p>
+<p class="comment">使用了其中的部分控件来实现界面布局。</p>
+<ul>
+<li><a href="http://avalonedit.net/">ICSharpCode.AvalonEdit</a>。</li>
+</ul>
+<p class="comment">The MIT License (MIT)</p>
+<p class="comment">用来实现主编辑区。</p>
+<ul>
+<li><a href="https://github.com/MahApps/MahApps.Metro">MahApps.Metro</a>。</li>
+</ul>
+<p class="comment">Microsoft Public License (MS-PL)</p>
+<p class="comment">用来做主界面。</p>
+<ul>
+<li><a href="https://github.com/PKRoma/MarkdownSharp">MarkdownSharp</a>。</li>
+</ul>
+<p class="comment">New BSD License (BSD)</p>
+<p class="comment">以此编译器为基础，附加了自定义的 Markdown 格式字符的编译方法。</p>
+<ul>
+<li><a href="http://wpftoolkit.codeplex.com/">WPFToolkit</a>。</li>
+</ul>
+<p class="comment">Microsoft Public License (Ms-PL)</p>
+<p class="comment">使用了其中个别控件。</p>
+<ul>
+<li><a href="http://www.codeproject.com/Tips/768408/A-Find-and-Replace-Tool-for-AvalonEdit">A Find and Replace Tool for AvalonEdit</a>。</li>
+</ul>
+<p class="comment">The Code Project Open License (CPOL) 1.02</p>
+<p class="comment">我以此为基础改造成了嵌入式的查找/替换框。</p>
+<ul>
+<li><a href="http://jquery.com/">jQuery</a></li>
+</ul>
+<p class="comment">The MIT License (MIT)</p>
+<p class="comment">编译的 Html 文档依赖此 JS 库。</p>
+<ul>
+<li><a href="www.icsharpcode.net">SharpDevelop</a></li>
+</ul>
+<p class="comment">GNU Lesser General Public License (LGPL)</p>
+<p class="comment">我从它的源代码中抄来了关于打印的部分。</p>
+<ul>
+<li><a href="https://github.com/GeReV/NSoup">NSoup</a></li>
+</ul>
+<p class="comment">The MIT License (MIT)</p>
+<p class="comment">对编译后的 Html 文档进行格式化。</p>
+<ul>
+<li><a href="http://www.codeproject.com/Articles/555302/A-better-WPF-Browser-Control-IE-Wrapper">A better WPF-Browser-Control (IE-Wrapper)</a></li>
+</ul>
+<p class="comment">作者：Robert Köpferl</p>
+<p class="comment">The Code Project Open License (CPOL)</p>
+<p class="comment">这是个对 IE 的封装控件，省去了我“自行设计演示界面的缩放功能”这一麻烦的工作。</p>
+<ul>
+<li><a href="http://ironpython.net">IronPython</a></li>
+</ul>
+<p class="comment">MS-PL</p>
+<p class="comment">我用它支持用户自定义 Python 脚本来对文本进行格式化。</p>
+<ul>
+<li><a href="https://github.com/JamesNK/Newtonsoft.Json">Newtonsoft.Json</a></li>
+</ul>
+<p class="comment">The MIT License (MIT)</p>
+<p class="comment">我用它来解析 json 数据以实现自动更新。</p>
+<ul>
+<li><a href="https://github.com/haf/DotNetZip.Semverd">DotNetZip</a></li>
+</ul>
+<p class="comment">作者：Henrik/Dino Chisa</p>
+<p class="comment">Microsoft Public License of October 2006</p>
+<p class="comment">2018年11月21日添加。我用它来打包工作区。</p>
+<ul>
+<li><a href="https://github.com/deanebarker/Nemmet">Nemmet</a></li>
+</ul>
+<p class="comment">作者：deanebarker</p>
+<p class="comment">作者未提供协议，但公开了源码。（侵删）</p>
+<p class="comment">用于提供有限的 Emmet（快速编写 Html）功能。</p>
+<ul>
+<li><a href="https://www.syncfusion.com/">Metro Studio</a></li>
+</ul>
+<p class="comment">感谢 Syncfusion 提供的 Metro Studio ——我使用了其中不少图标。</p>
+<p class="comment">协议：截至2019年5月5日，官网明确表示可以应用于开源应用程序甚至商业软件。</p>
+<ul>
+<li><a href="https://github.com/xceedsoftware/DocX">DocX</a></li>
+</ul>
+<p class="comment">作者：XCEED SOFTWARE, INC.</p>
+<p class="comment">协议：Xceed Community License。</p>
+<p class="comment">2020年1月17日用于提供简单的公文输出功能。</p>
+<p>谨对以上开源项目的代码贡献者们致以真挚的谢意！</p>
+<p>还要感谢开源打包工具 <a href="http://www.jrsoftware.org/isinfo.php">Innosetup</a>——我是用它打包的。</p>
+<p>另外，还要特别感谢阿里巴巴公司提供的免费普惠体字体——我在软件的初始屏幕上使用了这种字体；微软公司提供的免费、开源开发工具——我从 Visual Studio 2012 Express 一直用到 Visual Studio 2017 Community 才基本完成了这个项目。</p>
+</div><h1 class='title' id='title4' title='点击展开/折叠'><span id='header_span4' class='header_span'>◆ </span>4.特色功能</h1><script>$(document).ready(function(){$("#title4").click(function(){$("#panel4").toggle();if($("#panel4").is(":hidden")){$("#header_span4").html('◆ ');}else{$("#header_span4").html('◇ ');}});});</script><div class='panel_title_h1' id='panel4' style='display: none;'>
+<p>本程序与普通的 Markdown 编辑器不同，我最初的目的是做个简单的静态网站，所以把它做成了个简单的集成环境。它具有一些特色功能：</p>
+<h2 class='title' id='title5' title='点击展开/折叠'><span id='header_span5' class='header_span'>◆ </span>4.1.文件资源管理与 CHM 工程创建</h2><script>$(document).ready(function(){$("#title5").click(function(){$("#panel5").toggle();if($("#panel5").is(":hidden")){$("#header_span5").html('◆ ');}else{$("#header_span5").html('◇ ');}});});</script><div class='panel_title_h2' id='panel5' style='display: none;'>
+<p>最初并没有打算支持创建 CHM 工程，只是打算做一个简单的、可以预览效果的 Markdown 编辑器。</p>
+<p>但由于需要支持一些特殊的效果，必须涉及到相对于目录层次的 css/javascript 文件引用——于是文件资源管理器就成为必要的选项。</p>
+<p>再然后就是顺理成章地想到何不干脆自动生成 CHM 工程结构以便编译呢？</p>
+<p>于是，在整合了微软的 Html Help Workshop 之后，它就成了个 Markdown To CHM 的制作工具了。</p>
+<blockquote>
+  <p>问题在于：将微软的 Html Help Workshop 整合进安装包会侵犯版权。所以这样做虽然技术上很容易实现，但在实际上却行不通。</p>
+</blockquote>
+<p><div id='' class='region_i'><p class='region_header' id='region_header_1' style='border-bottom-color:transparent;border-bottom-width:0;padding-left: 1em;font-weight : bold;text-indent: 0px;text-align: left;'></p><div class='region_panel' id='region_panel_1'><table><tr><td><script>$(document).ready(function() {$('#region_header_1').click(function() {$('#region_panel_1').toggle();});}); </script>
+<p>所以用户需要自行到微软公司官方网站下载 Html Help Workshop 并安装。网址在<a href="https://www.microsoft.com/en-us/download/confirmation.aspx?id=21138" title="Html Help Workshop 微软公司官方下载地址">这里</a>。</p>
+<blockquote>
+  <p>如果下载的不是官方版本（只有英文），而是其它汉化修改版，用户可能需要手工指定 Html Help Workshop 的安装位置——这样 LME 才能调用它。</p>
+  
+  <p>如果既安装了微软公司的官方版本，又下载了其它版本且指定了其它版本的位置，则优先使用其它版本的 Html Help Workshop。</p>
+</blockquote>
+</td></tr></table>
+</div><p class='region_tail' id='region_tail_1'  style='border-top-color:transparent;border-bottom-width:0;'></p></div><script>$(document).ready(function() {$('#region_tail_1').click(function() {$('#region_panel_1').toggle();});}); </script></p>
+<p>从这个意义上说，经过几年的努力，我终于有了一个自己制作的、能免费生成 CHM 帮助文档的工具了；于是终于不必再辛辛苦苦纠结于到底用哪个 Html 编辑器更好了。</p>
+<p><div id='' class='region_w'><p class='region_header' id='region_header_2' style='border-bottom-color:transparent;border-bottom-width:0;padding-left: 1em;font-weight : bold;text-indent: 0px;text-align: left;'></p><div class='region_panel' id='region_panel_2'><table><tr><td><script>$(document).ready(function() {$('#region_header_2').click(function() {$('#region_panel_2').toggle();});}); </script>
+<p>前提是你得选择使用 GB2312 编码来编译所有 Markdown 文件——因为微软的 Html Help Workshop 不能完整支持 UTF-8 编码的 Html 文件。</p>
+</td></tr></table>
+</div><p class='region_tail' id='region_tail_2'  style='border-top-color:transparent;border-bottom-width:0;'></p></div><script>$(document).ready(function() {$('#region_tail_2').click(function() {$('#region_panel_2').toggle();});}); </script></p>
+<h3 class='title' id='title6' title='点击展开/折叠'><span id='header_span6' class='header_span'>◆ </span>4.1.1.什么是 CHM 文件？</h3><script>$(document).ready(function(){$("#title6").click(function(){$("#panel6").toggle();if($("#panel6").is(":hidden")){$("#header_span6").html('◆ ');}else{$("#header_span6").html('◇ ');}});});</script><div class='panel_title_h3' id='panel6' style='display: none;'>
+<p>CHM 是微软公司自 Windows 98 以来提供的一种帮助文档格式，意思是 Compiled HTML。这种帮助文件以<code>.chm</code>为扩展名，图标通常为一个带问号的文档图标。</p>
+<p>自 Windows 98 以来，操作系统中都自带解释器（打开 CHM 文件的工具），即 Windows 安装目录下的 HH.EXE。CHM 文件可以通过官方免费提供的 <code>HTML Help Workshop</code> 生成，它的源文件是 HTML 文件，由于 CHM 解释器是调用浏览器来呈现其中的页面的，所以在 CHM 文件中还可以添加 css/javascript ——这样可以做出很多特殊效果。</p>
+<p>虽然微软早就放弃了这种文档格式，但实际上它十分方便，所以直到现在也仍然有很广泛的用途。</p>
+<p>网上能找到不少专门制作 CHM 的收费软件——这类专用工具还是颇有那么一些<strong>钱途</strong>的。</p>
+</div><h3 class='title' id='title7' title='点击展开/折叠'><span id='header_span7' class='header_span'>◆ </span>4.1.2.关于 Html Help Workshop</h3><script>$(document).ready(function(){$("#title7").click(function(){$("#panel7").toggle();if($("#panel7").is(":hidden")){$("#header_span7").html('◆ ');}else{$("#header_span7").html('◇ ');}});});</script><div class='panel_title_h3' id='panel7' style='display: none;'>
+<p>Lunar Markdown Editor 只能创建 CHM 工程文件，其编译功能需要微软公司的 Html Help Workshop 来实现，所以还需要自行下载、安装之。</p>
+<p>对于 Lunar Markdown Editor 来说，<code>让用户自行安装 Html Help Workshop</code> 这种方案虽然没有版权问题，但有时候会出些意外。这是因为 Html Help Workshop 在编译CHM文件时，需要用到一些库文件，而这些库文件必须在操作系统中“注册（RegSvr）”过。</p>
+<p>网上下载的 Html Help Workshop 各种汉化版有些并没有带注册功能。如果下载的是这种安装包，实际使用（编译 CHM）时会出现莫名其妙的错误。所以我不得不考虑将可以使用的 Html Help Workshop 直接集成到 Lunar Markdown Editor 的安装包中，但这有版权隐患，只得放弃。</p>
+</div><h3 class='title' id='title8' title='点击展开/折叠'><span id='header_span8' class='header_span'>◆ </span>4.1.3.关于 CHM 文件无法显示问题</h3><script>$(document).ready(function(){$("#title8").click(function(){$("#panel8").toggle();if($("#panel8").is(":hidden")){$("#header_span8").html('◆ ');}else{$("#header_span8").html('◇ ');}});});</script><div class='panel_title_h3' id='panel8' style='display: none;'>
+<p>有时候我们可以打开从网上下载来的 CHM 文件，但是页面不能显示。原因是操作系统出于保护系统安全阻止了 CHM 文件的显示。</p>
+<p>这通常发生于下列条件之下：</p>
+<ol>
+<li><p>CHM 文件有脚本</p></li>
+<li><p>CHM 被存储在 NTFS 格式的磁盘分区中</p></li>
+</ol>
+<p>解决办法：右击此chm文件选择属性，然后在第一个标签里点击“解除阻止”就可以了。</p>
+</div></div><h2 class='title' id='title9' title='点击展开/折叠'><span id='header_span9' class='header_span'>◆ </span>4.2.Markdown 语法高亮显示</h2><script>$(document).ready(function(){$("#title9").click(function(){$("#panel9").toggle();if($("#panel9").is(":hidden")){$("#header_span9").html('◆ ');}else{$("#header_span9").html('◇ ');}});});</script><div class='panel_title_h2' id='panel9' style='display: none;'>
+<p>Markdown 的语法高亮显示不是太好做——各语法元素很容易相互冲突——所以这个功能不是很完善。</p>
+<p>有时会发现语法高亮显示不是太准确，这对编译 Html 文档不会产生影响。只要保证没写错，编译出来就不会有问题。</p>
+</div><h2 class='title' id='title10' title='点击展开/折叠'><span id='header_span10' class='header_span'>◆ </span>4.3.中文格式符</h2><script>$(document).ready(function(){$("#title10").click(function(){$("#panel10").toggle();if($("#panel10").is(":hidden")){$("#header_span10").html('◆ ');}else{$("#header_span10").html('◇ ');}});});</script><div class='panel_title_h2' id='panel10' style='display: none;'>
+<p>Markdown 使用一些简单的字符表示某种需要转译为 html 标签的格式定义。这些格式标志字符<strong>通常都是英文</strong>的。</p>
+<p>但由于我主要用以编辑中文文档，每次输入这些标签时都需要切换到英文状态，有些繁琐且易错。</p>
+<p>例如：</p>
+<pre><code>&gt; 引用块</code></pre>
+<p>上面这行文本编辑成 html 会是这样的效果：</p>
+<blockquote>
+  <p>引用块</p>
+</blockquote>
+<p>但我希望在中文状态下也能快速输入，当在中文输入状态下时，按<code>Shift+&gt;</code>会输入右双书名号，这时可以这样子输入：</p>
+<pre><code>》　引用块</code></pre>
+<p>转译成 html 后效果与上面相同：</p>
+<blockquote>
+  <p>引用块</p>
+</blockquote>
+<p>通常情况下，Markdown 要求在某行文本的开头用一个英文（半角）大于号字符后面加上一个半角空格才能定义一个文本块。——也就是以<code>&gt;&nbsp;</code>开头的行才算引用块。</p>
+<p>但我觉得不方便，于是去除了对半角空格的要求——只要某行以<code>&gt;</code>或<code>》</code>开头，都算文本块。</p>
+<p>在去除了对这个空格的要求后，格式化 Markdown 文本时往往会造成当前插入点光标位置变动——这是因为格式化时自动添加了空格。</p>
+<p>实际上，即使不格式化，也照样编译为 Html ——效果一样。</p>
+<h3 class='title' id='title11' title='点击展开/折叠'><span id='header_span11' class='header_span'>◆ </span>4.3.1.支持哪些中文格式字符？</h3><script>$(document).ready(function(){$("#title11").click(function(){$("#panel11").toggle();if($("#panel11").is(":hidden")){$("#header_span11").html('◆ ');}else{$("#header_span11").html('◇ ');}});});</script><div class='panel_title_h3' id='panel11' style='display: none;'>
+<p>Markdown 本身较为复杂，而且还支持直接嵌入 Html 标签，所以几乎不可能做到中英文格式字符一一对应。</p>
+<p>在制作这个程序时，仅仅是根据使用中最常见的几种情况来提供了中文（全角）格式字符的支持：</p>
+<ul>
+<li><p>以<code>》&nbsp;</code>（右双书名号加半角空格）或<code>》　</code>（右双书名号加全角空格）开头，相当于以<code>&gt;&nbsp;</code>开头。</p></li>
+<li><p>用以划分表格行中各单元格的竖线。全角的<code>&#65372;</code>字符和半角的<code>&#124;</code>字符在编译为html时等效。</p></li>
+</ul>
+<p>但是如果你想在<code>正文</code>、<code>引用块</code>中呈现这两个字符本身（而不是解释为表格单元格分隔符），你需要输入这两个字符的 Unicode 编码。全角竖线的 Unicode 编码是<code>&amp;#65372;</code>，半角竖线则是<code>&amp;#124;</code>。</p>
+<p>而<code>代码块</code>、<code>列表项</code>中的竖线字符（无论全角、半角）均会被<strong>解释为本身</strong>而不是表格单元格分隔线。</p>
+<ul>
+<li>以分号开头的行是注释行，不会被编译到 html 文档中。以中文全角分号<code>；</code>开头或者以半角英文分号<code>;</code>开头效果是一样的。</li>
+</ul>
+</div></div><h2 class='title' id='title12' title='点击展开/折叠'><span id='header_span12' class='header_span'>◆ </span>4.4.文本格式化</h2><script>$(document).ready(function(){$("#title12").click(function(){$("#panel12").toggle();if($("#panel12").is(":hidden")){$("#header_span12").html('◆ ');}else{$("#header_span12").html('◇ ');}});});</script><div class='panel_title_h2' id='panel12' style='display: none;'>
+<p>由于支持中文格式字符，为便于在其它Markdown编辑器中查看和编辑，还提供了<code>文本格式化</code>功能，大部分中文格式字符会被标准Markdown英文格式字符替换。</p>
+<p>但为了文字表的整齐，不会将全角的竖线、冒号等进行对齐替换。</p>
+<p>点击<code>格式</code>→<code>格式化文本</code>→<code>保存前自动格式化</code>菜单项，使此菜单项被勾选，即可在保存前自动进行文本格式化；再点击一下，去除此菜单项前的对勾，保存前不会自动格式化。</p>
+<p>需要再次强调的是：无论是否对 Markdown 文本格式化，都不影响最终编译生成 Html的效果。</p>
+</div><h2 class='title' id='title13' title='点击展开/折叠'><span id='header_span13' class='header_span'>◆ </span>4.5.试题编辑、演示功能</h2><script>$(document).ready(function(){$("#title13").click(function(){$("#panel13").toggle();if($("#panel13").is(":hidden")){$("#header_span13").html('◆ ');}else{$("#header_span13").html('◇ ');}});});</script><div class='panel_title_h2' id='panel13' style='display: none;'>
+<p>可以编辑一些选择（含判断）、填空、材料解析题来演示，也可以转译为 Html。</p>
+<p>演示时，试题不会直接显示答案，可以向学生提问。而转译成 Html 时则会直接将答案、解析都标示出来。</p>
+<p>试题的每个组成部分都有些格式字符，这些格式字符大多是由汉字和特殊符号组成的——但不需要手工输入汉字——程序提供了<code>自动完成</code>功能，并且支持<strong>汉字拼音首字母</strong>快速输入。</p>
+<p>例如：当需要输入<code>　　试题＞＞</code>这个符号时，只需要在一行文本的开头输入<code>st</code>这两个字母，然后在弹出的快速完成窗口中选择<code>　　试题＞＞</code>这个条目并按下回车键即可。</p>
+<p>如果觉得为了编辑试题而提供的“自动完成”功能有些烦人，可以关闭“试题编辑”——按<code>Ctrl+E</code>组合快捷键即可。</p>
+</div><h2 class='title' id='title14' title='点击展开/折叠'><span id='header_span14' class='header_span'>◆ </span>4.6.文字表格式化</h2><script>$(document).ready(function(){$("#title14").click(function(){$("#panel14").toggle();if($("#panel14").is(":hidden")){$("#header_span14").html('◆ ');}else{$("#header_span14").html('◇ ');}});});</script><div class='panel_title_h2' id='panel14' style='display: none;'>
+<p>很多 Markdown 编辑器都支持文字表的转换，但通常也面临着：中英文输入法切换、文字表单元格中文本长度不一导致格式混乱...这些问题。</p>
+<p>我参考了 emacs 的<code>org模式</code>中对纯文本组成的文字表的格式化功能，不但可以快速输入简单的二维文字表，而且还可以在编译为html文档之前对纯文本的表格进行格式化，用半角空格进行填充，保证各列文本对齐。</p>
+<p>这个功能只适用于微型表格。微型文字表格对齐后可一目了然。但较大的文字表可能面临文本自动换行的问题——这时候就会变得很恐怖。</p>
+<p>文字表中每个单元格的内容不宜长，否则格式化的文字表会由于过长而导致文本自动换行——换行后的文字表其实仍然不能达到一目了然的效果。</p>
+<p>虽然可以关闭“文本自动折行”，但总感觉有些得不偿失。</p>
+<p>这个功能远没有emacs的org模式中对纯文字表的格式化功能那么强大，但对中文字符的支持更好——在中英文同时存在时，纯文字表格式化后还是整齐的（emacs 格式化中英文混合的表后位置不对齐）。</p>
+<p>本程序默认文档字体是新宋体（Simsun）。</p>
+<p>这是因为：</p>
+<ul>
+<li>只有固定宽度的字体（推荐宋体或新宋体）才能保证格式化的文字表是整齐的。</li>
+</ul>
+<p>现在大多数字体（例如：微软公司的雅黑字体）是可变宽度的字体——再怎么格式化都没法子保证文字表对齐。</p>
+<p>常见字体中，只有这些字体可以保证文字表在格式化后基本对齐：<code>仿宋、黑体、楷体、隶书、宋体、新宋体、幼圆体</code>。</p>
+<ul>
+<li>点阵字体在桌面计算机上效果更好。</li>
+</ul>
+<p>目前的桌面型计算机大多并没有采用高分屏——从性能和实际使用体验来看，桌面型计算机使用高分屏的必要性不是很大。</p>
+<p>宋体或新宋体都是点阵式字体，在不使用高分辨率显示屏的情况下，宋体字在某些较小字号下十分清晰、锐利，在液晶显示器上效果极好。而矢量字体则不然，矢量字体适合较大字号或高分辨率的屏幕，当字号较小时，矢量字体会出现模糊现象。</p>
+<p>除了格式化以外，考虑到有时候还需要做一些带序号的表，所以还给文字表添加了简单的<code>自动填充序号</code>功能。</p>
+</div><h2 class='title' id='title15' title='点击展开/折叠'><span id='header_span15' class='header_span'>◆ </span>4.7.标题分层折叠</h2><script>$(document).ready(function(){$("#title15").click(function(){$("#panel15").toggle();if($("#panel15").is(":hidden")){$("#header_span15").html('◆ ');}else{$("#header_span15").html('◇ ');}});});</script><div class='panel_title_h2' id='panel15' style='display: none;'>
+<p>无论是在编辑时还是转译为 Html 后，都支持折叠功能。但编辑时支持所有6级标题的折叠，转换为 Html 文档后只支持对一级标题的折叠。</p>
+<p>在编写 Markdown 文档时，一级标题就是以一个<code>#</code>字符开头的文本行。例如下面这行就是一个一级标题：</p>
+<pre><code>\#xxx
+</code></pre>
+<p>在编译为 Html 文档后，这个文本行为被转换为类似下面这样的Html标签：</p>
+<pre><code>&amp;lt;h1&amp;gt;xxx&amp;lt;/h1&amp;gt;
+</code></pre>
+</div><h2 class='title' id='title16' title='点击展开/折叠'><span id='header_span16' class='header_span'>◆ </span>4.8.编译左边栏菜单</h2><script>$(document).ready(function(){$("#title16").click(function(){$("#panel16").toggle();if($("#panel16").is(":hidden")){$("#header_span16").html('◆ ');}else{$("#header_span16").html('◇ ');}});});</script><div class='panel_title_h2' id='panel16' style='display: none;'>
+<p>可以在文件中定义编译左边栏菜单，菜单中每个链接指向编译后的 Html 中的某个标题。</p>
+<blockquote>
+  <p>这实际上是通过“锚”来实现的，而锚可能被标题折叠。所以要编译左边栏菜单，就不应使用“&lt;H1&gt;-&lt;H6&gt;自动折叠”这个 Html 编译选项。</p>
+</blockquote>
+</div><h2 class='title' id='title17' title='点击展开/折叠'><span id='header_span17' class='header_span'>◆ </span>4.9.任务列表</h2><script>$(document).ready(function(){$("#title17").click(function(){$("#panel17").toggle();if($("#panel17").is(":hidden")){$("#header_span17").html('◆ ');}else{$("#header_span17").html('◇ ');}});});</script><div class='panel_title_h2' id='panel17' style='display: none;'>
+<p>任务列表有两种：<code>；TODO：</code>型注释任务列表项和<code>带时间标记</code>的非注释型任务列表项。</p>
+<p>这两种任务列表项目都可以通过主界面的<code>查找任务</code>功能来搜索，然后用鼠标左键双击找到的项目就可以快速跳转到文件中对应位置了。</p>
+<h3 class='title' id='title18' title='点击展开/折叠'><span id='header_span18' class='header_span'>◆ </span>4.9.1.TODO 型注释任务列表项</h3><script>$(document).ready(function(){$("#title18").click(function(){$("#panel18").toggle();if($("#panel18").is(":hidden")){$("#header_span18").html('◆ ');}else{$("#header_span18").html('◇ ');}});});</script><div class='panel_title_h3' id='panel18' style='display: none;'>
+<p>这种任务列表所在的文本行以<code>；TODO：</code>开头，属于注释的一种。</p>
+<blockquote>
+  <p>由于以分号开头的注释行不会被编译进 Html 文档中，所以这种任务列表也同样不会被编译进 Html 文档中。</p>
+</blockquote>
+<p>一般来说，这种任务列表项用于提醒用户<u>文章的哪些部分还未完成</u>等信息。它不会影响 Html 编译的结果。</p>
+</div><h3 class='title' id='title19' title='点击展开/折叠'><span id='header_span19' class='header_span'>◆ </span>4.9.2.带时间标记的任务列表</h3><script>$(document).ready(function(){$("#title19").click(function(){$("#panel19").toggle();if($("#panel19").is(":hidden")){$("#header_span19").html('◆ ');}else{$("#header_span19").html('◇ ');}});});</script><div class='panel_title_h3' id='panel19' style='display: none;'>
+<p>这种任务列表项可以在后面跟上时间标记项目来表示当前任务项的完成进度。</p>
+<blockquote>
+  <p>与<code>；TODO：</code>型任务列表项不同：这种可以带时间标记的任务列表项不是一种注释，它会被编译到 Html 文档中。</p>
+  
+  <p>在查找的结果中，会显示该任务列表项下的所有时间标记。这样，任务的进度就可以一目了然。</p>
+</blockquote>
+<p>随时可以将一行文本转换为一个任务列表项。</p>
+<p>按<code>Ctrl+[</code>或<code>Ctrl+]</code>组合快捷键，可以令一行文本在<strong>普通文本</strong>、<strong>未开始的任务</strong>、<strong>正在进行的任务</strong>、<strong>已完成的任务</strong>、<strong>已废弃的任务</strong>这四种状态间按照顺序、逆序切换。</p>
+<ul>
+<li><p>尚未开始的任务，文本行以<code>[-]</code>开头；</p></li>
+<li><p>正在进行的任务，文本行以<code>[%]</code>开头；</p></li>
+<li><p>已经完成的任务，文本行以<code>[+]</code>开头；</p></li>
+<li><p>已经废弃的任务，文本行以<code>[#]</code>开头。</p></li>
+</ul>
+<p>每个任务列表项下面都可以添加多个<strong>时间标签</strong>。时间标签的格式如下：</p>
+<pre><code>[2016-03-13 16:06][-] 这个表示定义的时间（未开始）
+[2016-03-13 16:06][%] 这个表示已经开始（正在进行）
+[2016-03-13 16:06][+] 这个表示已经完成
+[2016-03-13 16:06][#] 这个表示已经废弃
+</code></pre>
+<p>插入点在任务列表项上时，按<code>Ctrl + Shift + D</code>可以快速添加时间标签。</p>
+<p>插入点在时间标签上时，按<code>Ctrl + Shift + D</code>可以快速修改时间为当前时间。</p>
+<p>插入点在时间标签上时，按<code>Ctrl + [</code>和<code>Ctrl + ]</code>可以快速切换状态。</p>
+</div></div><h2 class='title' id='title20' title='点击展开/折叠'><span id='header_span20' class='header_span'>◆ </span>4.10.自定义折叠块</h2><script>$(document).ready(function(){$("#title20").click(function(){$("#panel20").toggle();if($("#panel20").is(":hidden")){$("#header_span20").html('◆ ');}else{$("#header_span20").html('◇ ');}});});</script><div class='panel_title_h2' id='panel20' style='display: none;'>
+<p>可以通过顶格输入<code>region{</code>和<code>}region</code>的办法来自定义一个折叠区域。在编译为 Html 后，仍然支持折叠。</p>
+<p>例如：下面这段文本，</p>
+<pre><code>region { 首行文本
+&gt; 这是一些在自定义折叠区中的文本。
+&gt; 这是一些在自定义折叠区中的文本。
+&gt; 这是一些在自定义折叠区中的文本。
+&gt; 这是一些在自定义折叠区中的文本。
+&gt; 这是一些在自定义折叠区中的文本。     
+} region 尾行文本
+</code></pre>
+<p>编译为 Html 后显示效果如下：</p>
+<p><div id='' class='region'><p class='region_header' id='region_header_3' style=''>首行文本</p><div class='region_panel' id='region_panel_3' style='display:block;'><table><tr><td><script>$(document).ready(function() {$('#region_header_3').click(function() {$('#region_panel_3').toggle();});}); </script>
+<blockquote>
+  <p>这是一些在自定义折叠区中的文本。</p>
+  
+  <p>这是一些在自定义折叠区中的文本。</p>
+  
+  <p>这是一些在自定义折叠区中的文本。</p>
+  
+  <p>这是一些在自定义折叠区中的文本。</p>
+  
+  <p>这是一些在自定义折叠区中的文本。     </p>
+</blockquote>
+</td></tr></table>
+</div><p class='region_tail' id='region_tail_3' >尾行文本</p></div><script>$(document).ready(function() {$('#region_tail_3').click(function() {$('#region_panel_3').toggle();});}); </script></p>
+<p><div id='' class='region_w'><p class='region_header' id='region_header_4' style='padding-left: 1em;font-weight : bold;text-indent: 0px;text-align: left;'>折叠中不能嵌入代码块</p><div class='region_panel' id='region_panel_4' style='display:block;'><table><tr><td><script>$(document).ready(function() {$('#region_header_4').click(function() {$('#region_panel_4').toggle();});}); </script>
+<p>原因在于当使用低版本的 IE 浏览器时，代码块会从折叠区右边溢出，而 CHM 是调用低版本的 IE 内核来呈现页面的，所以也会出问题。</p>
+</td></tr></table>
+</div><p class='region_tail' id='region_tail_4'  style='border-top-color:transparent;border-bottom-width:0;'></p></div><script>$(document).ready(function() {$('#region_tail_4').click(function() {$('#region_panel_4').toggle();});}); </script></p>
+<h3 class='title' id='title21' title='点击展开/折叠'><span id='header_span21' class='header_span'>◆ </span>4.10.1.折叠区可以支持图标</h3><script>$(document).ready(function(){$("#title21").click(function(){$("#panel21").toggle();if($("#panel21").is(":hidden")){$("#header_span21").html('◆ ');}else{$("#header_span21").html('◇ ');}});});</script><div class='panel_title_h3' id='panel21' style='display: none;'>
+<p>如果在<code>region</code>和<code>{</code>之间加上<code>i、q、w、e</code>这四个字母之一，编译后的自定义折叠区中会在左侧分别添加<code>信息（information）</code>、<code>疑问（question）</code>、<code>警告（warning）</code>、<code>错误（error）</code>四种图标之一。</p>
+<p>例如：</p>
+<pre><code>region i { 带 information 图标示例
+← infomation icon
+} region
+region q { 带 question 图标示例
+← question icon
+} region
+region w { 带 warning 图标示例
+← warning icon
+} region
+region e { 带 error 图标示例
+← error icon
+} region
+</code></pre>
+<p>编译为 Html 后会呈现为：</p>
+<p><div id='' class='region_i'><p class='region_header' id='region_header_5' style='padding-left: 1em;font-weight : bold;text-indent: 0px;text-align: left;'>带 information 图标示例</p><div class='region_panel' id='region_panel_5' style='display:block;'><table><tr><td><script>$(document).ready(function() {$('#region_header_5').click(function() {$('#region_panel_5').toggle();});}); </script>
+<p>← infomation icon</p>
+</td></tr></table>
+</div><p class='region_tail' id='region_tail_5'  style='border-top-color:transparent;border-bottom-width:0;'></p></div><script>$(document).ready(function() {$('#region_tail_5').click(function() {$('#region_panel_5').toggle();});}); </script></p>
+<p><div id='' class='region_q'><p class='region_header' id='region_header_6' style='padding-left: 1em;font-weight : bold;text-align: left;text-indent: 0px;'>带 question 图标示例</p><div class='region_panel' id='region_panel_6' style='display:block;'><table><tr><td><script>$(document).ready(function() {$('#region_header_6').click(function() {$('#region_panel_6').toggle();});}); </script>
+<p>← question icon</p>
+</td></tr></table>
+</div><p class='region_tail' id='region_tail_6'  style='border-top-color:transparent;border-bottom-width:0;'></p></div><script>$(document).ready(function() {$('#region_tail_6').click(function() {$('#region_panel_6').toggle();});}); </script></p>
+<p><div id='' class='region_w'><p class='region_header' id='region_header_7' style='padding-left: 1em;font-weight : bold;text-indent: 0px;text-align: left;'>带 warning 图标示例</p><div class='region_panel' id='region_panel_7' style='display:block;'><table><tr><td><script>$(document).ready(function() {$('#region_header_7').click(function() {$('#region_panel_7').toggle();});}); </script>
+<p>← warning icon</p>
+</td></tr></table>
+</div><p class='region_tail' id='region_tail_7'  style='border-top-color:transparent;border-bottom-width:0;'></p></div><script>$(document).ready(function() {$('#region_tail_7').click(function() {$('#region_panel_7').toggle();});}); </script></p>
+<p><div id='' class='region_e'><p class='region_header' id='region_header_8' style='padding-left: 1em;font-weight : bold;text-indent: 0px;text-align: left;'>带 error 图标示例</p><div class='region_panel' id='region_panel_8' style='display:block;'><table><tr><td><script>$(document).ready(function() {$('#region_header_8').click(function() {$('#region_panel_8').toggle();});}); </script>
+<p>← error icon</p>
+</td></tr></table>
+</div><p class='region_tail' id='region_tail_8'  style='border-top-color:transparent;border-bottom-width:0;'></p></div><script>$(document).ready(function() {$('#region_tail_8').click(function() {$('#region_panel_8').toggle();});}); </script></p>
+</div><h3 class='title' id='title22' title='点击展开/折叠'><span id='header_span22' class='header_span'>◆ </span>4.10.2.如何取消折叠区的折叠标头？</h3><script>$(document).ready(function(){$("#title22").click(function(){$("#panel22").toggle();if($("#panel22").is(":hidden")){$("#header_span22").html('◆ ');}else{$("#header_span22").html('◇ ');}});});</script><div class='panel_title_h3' id='panel22' style='display: none;'>
+<p>只要不输入标头文本就可以了。例如：只想要个图标，并不需要折叠功能时，直接像下面这样即可：</p>
+<pre><code>region i {
+宗法制，是按照成员在家族内部的地位来分配政治、经济权力与利益的制度。
+} region
+</code></pre>
+<p>编译为 Html 会呈现为：</p>
+<p><div id='' class='region_i'><p class='region_header' id='region_header_9' style='border-bottom-color:transparent;border-bottom-width:0;padding-left: 1em;font-weight : bold;text-indent: 0px;text-align: left;'></p><div class='region_panel' id='region_panel_9'><table><tr><td><script>$(document).ready(function() {$('#region_header_9').click(function() {$('#region_panel_9').toggle();});}); </script>
+<p>宗法制，是按照成员在家族内部的地位来分配政治、经济权力与利益的制度。</p>
+</td></tr></table>
+</div><p class='region_tail' id='region_tail_9'  style='border-top-color:transparent;border-bottom-width:0;'></p></div><script>$(document).ready(function() {$('#region_tail_9').click(function() {$('#region_panel_9').toggle();});}); </script></p>
+</div><h3 class='title' id='title23' title='点击展开/折叠'><span id='header_span23' class='header_span'>◆ </span>4.10.3.关于折叠块中的分割符</h3><script>$(document).ready(function(){$("#title23").click(function(){$("#panel23").toggle();if($("#panel23").is(":hidden")){$("#header_span23").html('◆ ');}else{$("#header_span23").html('◇ ');}});});</script><div class='panel_title_h3' id='panel23' style='display: none;'>
+<p>有时我们需要按垂直方向对页面进行一下分割，这时候使用折叠区就可以了。</p>
+<p>例如，下面这样：</p>
+<pre><code>region { 这是折叠区的头部
+｜      表格1       ｜
+｜==================｜
+｜ 表头1  ｜ 表头2  ｜
+｜:-------｜:-------｜
+｜单元格1 ｜单元格2 ｜
+｜单元格3 ｜单元格4 ｜
+...region 这几个汉字会被忽略...
+；上面这行是垂直分割符。
+｜      表格2       ｜
+｜==================｜
+｜ 表头A  ｜ 表头B  ｜
+｜:-------｜:-------｜
+｜单元格A ｜单元格B ｜
+｜单元格C ｜单元格D ｜
+} region 这是折叠区的尾部
+</code></pre>
+<p>编译后会显示成：</p>
+<p><div id='' class='region'><p class='region_header' id='region_header_10' style=''>这是折叠区的头部</p><div class='region_panel' id='region_panel_10' style='display:block;'><table><tr><td><script>$(document).ready(function() {$('#region_header_10').click(function() {$('#region_panel_10').toggle();});}); </script>
+<table><caption>表格1</caption>
+<tr><th style="TEXT-ALIGN: center;">表头1</th><th style="TEXT-ALIGN: center;">表头2</th></tr><tr><td style="TEXT-ALIGN: left;">单元格1</td>
+<td style="TEXT-ALIGN: left;">单元格2</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">单元格3</td>
+<td style="TEXT-ALIGN: left;">单元格4</td>
+</tr>
+</table>
+<p></td><td></p>
+<table><caption>表格2</caption>
+<tr><th style="TEXT-ALIGN: center;">表头A</th><th style="TEXT-ALIGN: center;">表头B</th></tr><tr><td style="TEXT-ALIGN: left;">单元格A</td>
+<td style="TEXT-ALIGN: left;">单元格B</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">单元格C</td>
+<td style="TEXT-ALIGN: left;">单元格D</td>
+</tr>
+</table>
+</td></tr></table>
+</div><p class='region_tail' id='region_tail_10' >这是折叠区的尾部</p></div><script>$(document).ready(function() {$('#region_tail_10').click(function() {$('#region_panel_10').toggle();});}); </script></p>
+<p>折叠区的分割符必须单独占一行，且必须以句号<code>...</code>开始，再跟<code>region</code>，再以三个句号<code>...</code>结尾。三连句号<code>...</code>与<code>region</code>之间可以有空格、制表符。</p>
+</div></div><h2 class='title' id='title24' title='点击展开/折叠'><span id='header_span24' class='header_span'>◆ </span>4.11.方块区域</h2><script>$(document).ready(function(){$("#title24").click(function(){$("#panel24").toggle();if($("#panel24").is(":hidden")){$("#header_span24").html('◆ ');}else{$("#header_span24").html('◇ ');}});});</script><div class='panel_title_h2' id='panel24' style='display: none;'>
+<p>方块是用来提供一些小的片段内容的——它通常用来提供一些需要强调或特别说明的内容片段。</p>
+<p>其实最初想实现的就是方块区域，因为没想好怎么做，就先做了个更复杂些的<code>自定义折叠区</code>。与自定义折叠区相比，方块的功能其实更简单些：</p>
+<ul>
+<li>方块只支持在编辑时折叠</li>
+</ul>
+<p>编译为 Html 文件后，方块只是在这个内容片段左右两侧加上两个中括号样的标记罢了。</p>
+<ul>
+<li>方块的首尾标题文本在编译为 Html 时会被忽略</li>
+</ul>
+<p>方块的语法很是简单：</p>
+<pre><code>[ 这是方块的头
+   这是些其它内容
+   这是些其它内容
+] 这是方块尾
+</code></pre>
+<p>编译为 Html 后效果如下：</p>
+<table id="" border="0" cellspacing="0" class="square-block"><tbody border="0"><tr border="0"><td class="square-block-left"/><td class="square-block-content"><div>
+
+<p>这是些其它内容</p>
+<p>这是些其它内容</p>
+
+</div></td><td class="square-block-right"/></tr></tbody></table>
+</div><h2 class='title' id='title25' title='点击展开/折叠'><span id='header_span25' class='header_span'>◆ </span>4.12.英译中词典功能</h2><script>$(document).ready(function(){$("#title25").click(function(){$("#panel25").toggle();if($("#panel25").is(":hidden")){$("#header_span25").html('◆ ');}else{$("#header_span25").html('◇ ');}});});</script><div class='panel_title_h2' id='panel25' style='display: none;'>
+<p>用户可以编辑一个英译中的词典（实际上输入其它语言的字符也没问题），然后开启<code>自动完成</code>功能和<code>英译中自动提示</code>，这样只需要输入符合中/英文词条的部分内容，就可以使用自动完成功能来方便地输入这些英译中的文本了（一次编辑，多次使用）。</p>
+<p>例如，当我们在词典中添加了下面这个词条后：</p>
+<pre><code>图形用户界面（GUI，Graphical User Interface）
+</code></pre>
+<p>无论是输入<code>gui</code>，还是输入<code>Graphical User Interface</code>的一部分，甚至是输入<code>tx</code>都会弹出智能提示窗口，此时按下方向键选中要使用的词条，再按回车键就会将上面这个词条直接插入到当前位置了。</p>
+<blockquote>
+  <p>"tx"，是“图形”这两字的汉语拼音首字母。本程序虽然支持使用汉语拼音首字母来进行自动提示的筛选，但并没有考虑多音字问题。如“仇”字，只能输入字母<code>c</code>，不能输入<code>q</code>。</p>
+</blockquote>
+</div></div><h1 class='title' id='title26' title='点击展开/折叠'><span id='header_span26' class='header_span'>◆ </span>5.语法说明</h1><script>$(document).ready(function(){$("#title26").click(function(){$("#panel26").toggle();if($("#panel26").is(":hidden")){$("#header_span26").html('◆ ');}else{$("#header_span26").html('◇ ');}});});</script><div class='panel_title_h1' id='panel26' style='display: none;'>
+<p>本程序在标准 Markdown 语法的基础上进行了一些扩充，以满足自己使用的需要。所以它和标准 Markdown 相比，稍有不同。有网友曾经对我扩展标准 Markdown 表示异议，认为应该尊重 Markdown 标准。但问题于：开源的价值之一就在于可以按需定制。而且扩展标准 Markdown 语法的大有人在，为什么我就不能？所以在 LME 中还是以实现功能为优先考量。下面的说明既包括基本语法，也包括扩展语法。</p>
+<h2 class='title' id='title27' title='点击展开/折叠'><span id='header_span27' class='header_span'>◆ </span>5.1.标题</h2><script>$(document).ready(function(){$("#title27").click(function(){$("#panel27").toggle();if($("#panel27").is(":hidden")){$("#header_span27").html('◆ ');}else{$("#header_span27").html('◇ ');}});});</script><div class='panel_title_h2' id='panel27' style='display: none;'>
+<p>Markdown 语法中，标题有两种：Atx 方式和 Setext 方式。但本程序<strong>只支持 Atx 方式</strong>。屏蔽了 Setext 方式。</p>
+<blockquote>
+  <p>这是因为 Setext 方式的标题易和其它自定义语法元素产生冲突。</p>
+</blockquote>
+<ul>
+<li>Atx 方式的标题</li>
+</ul>
+<p>以<code>#</code>符开头，共六级，一级就以一个<code>#</code>开头，二级就以两个<code>#</code>开头（写成<code>##</code>），其余依此类推。</p>
+<p>下面是个三级的 Atx 方式的标题：</p>
+<pre><code>###这是个三级标题
+</code></pre>
+<blockquote>
+  <p>其实不需要按三次<code>Shift+3</code>组合键来输入<code>###</code>。——只需要按下<code>Ctrl+3</code>即可。</p>
+  
+  <p>可惜的是，某些输入法中对<code>Ctrl+3</code>定义了一些功能，可能会造成冲突。</p>
+</blockquote>
+<ul>
+<li>Setext 方式的标题</li>
+</ul>
+<p>在标题文本下紧跟一行至少三个减号。</p>
+<p>本程序<strong>不支持</strong>这种方式！</p>
+<h3 class='title' id='title28' title='点击展开/折叠'><span id='header_span28' class='header_span'>◆ </span>5.1.1.关于标题的折叠功能</h3><script>$(document).ready(function(){$("#title28").click(function(){$("#panel28").toggle();if($("#panel28").is(":hidden")){$("#header_span28").html('◆ ');}else{$("#header_span28").html('◇ ');}});});</script><div class='panel_title_h3' id='panel28' style='display: none;'>
+<p>折叠功能原本在【编辑 Markdown 文档时】和【编译为 Html 文件后】表现不同：</p>
+<ul>
+<li>在编辑 Markdown 文档时</li>
+</ul>
+<p>六个级别的标题均支持折叠。</p>
+<blockquote>
+  <p>上级标题可以折叠下级标题；上级标题折叠时，属于此标题的所有下级都会被折叠起来。</p>
+</blockquote>
+<ul>
+<li>编译成 Html 文档后</li>
+</ul>
+<p>原先只有（Atx 方式的）一级标题支持（折叠/展开）功能。</p>
+<blockquote>
+  <p>由于这一功能依赖于 JavaScript（jQuery库)，所以如果浏览器禁用了JavaScript则编译后的Html网页文件在浏览器中呈现时无法折叠其标题。</p>
+</blockquote>
+<p>※但现在，无论是【编辑时】还是【编译成 Html 后】，<strong>都支持六级标题折叠/展开</strong>功能！！！</p>
+</div><h3 class='title' id='title29' title='点击展开/折叠'><span id='header_span29' class='header_span'>◆ </span>5.1.2.关于标题层级的格式化</h3><script>$(document).ready(function(){$("#title29").click(function(){$("#panel29").toggle();if($("#panel29").is(":hidden")){$("#header_span29").html('◆ ');}else{$("#header_span29").html('◇ ');}});});</script><div class='panel_title_h3' id='panel29' style='display: none;'>
+<p>当标题层级出现<code>断裂</code>的情况时，会自动缩减标题层级。如下所示：</p>
+<pre><code>#标题1
+#标题2
+##标题3
+#标题4
+###标题5
+######标题6
+</code></pre>
+<p>标题1到标题4都是连续的，它们或者与前一个标题同级，或者比前一个层级高一级。</p>
+<p>标题3→标题4也没问题，标题4的层级比标题3低（无论低几级都没问题）。</p>
+<p>但标题5相对于标题4就出现了<code>断裂</code>，因为标题5比标题4高2级！</p>
+<p>而标题六比之标题5也是<code>断裂</code>的。</p>
+<p>实际编译时，会被自动格式化为下面这个样子：</p>
+<pre><code>#标题1
+#标题2
+##标题3
+#标题4
+##标题5
+###标题6
+</code></pre>
+<p>出现<code>断裂</code>的标题会被格式化成前一标题的直接下级。如上例所示：</p>
+<p>标题5是三级，而标题4是一级，于是将标题5格式化为二级；</p>
+<p>标题5被格式化为二级后，发现标题6是六级，于是将标题六格式化成三级。</p>
+<p>我们还可以试试在一个空白文件中按下面这样书写：</p>
+<pre><code>######标题1
+######标题2
+######标题3
+######标题4
+######标题5
+######标题6
+</code></pre>
+<p>格式化后会变成这样：</p>
+<pre><code>#标题1
+##标题2
+###标题3
+####标题4
+#####标题5
+######标题6
+</code></pre>
+</div></div><h2 class='title' id='title30' title='点击展开/折叠'><span id='header_span30' class='header_span'>◆ </span>5.2.水平线</h2><script>$(document).ready(function(){$("#title30").click(function(){$("#panel30").toggle();if($("#panel30").is(":hidden")){$("#header_span30").html('◆ ');}else{$("#header_span30").html('◇ ');}});});</script><div class='panel_title_h2' id='panel30' style='display: none;'>
+<p>三个或更多-（或_，也可以是*），必须单独一行，可含空格。例如：</p>
+<pre><code>这是水平线上的文本
+--□-
+</code></pre>
+<p>上面的“□”表示一个空格。</p>
+<p>转译后会显示为：</p>
+<p>这是水平线上的文本</p>
+<hr />
+</div><h2 class='title' id='title31' title='点击展开/折叠'><span id='header_span31' class='header_span'>◆ </span>5.3.加粗</h2><script>$(document).ready(function(){$("#title31").click(function(){$("#panel31").toggle();if($("#panel31").is(":hidden")){$("#header_span31").html('◆ ');}else{$("#header_span31").html('◇ ');}});});</script><div class='panel_title_h2' id='panel31' style='display: none;'>
+<p>以前后各两个*（星号）或各两个_（下划线符）包围的文本是加粗文本。</p>
+<p>例如：</p>
+<pre><code>这是示例：**加粗文本**。或者这样：__加粗文本__。
+</code></pre>
+<p>转译后会显示为：</p>
+<p>这是示例：<strong>加粗文本</strong>。或者这样：<strong>加粗文本</strong>。</p>
+</div><h2 class='title' id='title32' title='点击展开/折叠'><span id='header_span32' class='header_span'>◆ </span>5.4.倾斜</h2><script>$(document).ready(function(){$("#title32").click(function(){$("#panel32").toggle();if($("#panel32").is(":hidden")){$("#header_span32").html('◆ ');}else{$("#header_span32").html('◇ ');}});});</script><div class='panel_title_h2' id='panel32' style='display: none;'>
+<p>以前后各一个*（星号）或各一个_（下划线符）包围的文本是倾斜文本。</p>
+<p>例如：</p>
+<pre><code>这是示例：*倾斜文本*。或者这样：_倾斜文本_。
+</code></pre>
+<p>转译后会显示为：</p>
+<p>这是示例：<em>倾斜文本</em>。或者这样：<em>倾斜文本</em>。</p>
+<p>从实践效果来看，英文比较简单，倾斜效果不容易造成阅读困难；而中文笔画较多，倾斜后往往不太看得清楚，故一般不宜对中文使用斜体。</p>
+</div><h2 class='title' id='title33' title='点击展开/折叠'><span id='header_span33' class='header_span'>◆ </span>5.5.删除线</h2><script>$(document).ready(function(){$("#title33").click(function(){$("#panel33").toggle();if($("#panel33").is(":hidden")){$("#header_span33").html('◆ ');}else{$("#header_span33").html('◇ ');}});});</script><div class='panel_title_h2' id='panel33' style='display: none;'>
+<p>删除线本来可以设计成类似<code>~要删除的文本~</code>这样的格式，但问题在于，本程序的项目管理需要使用<code>~</code>表示资源文件夹的名称。</p>
+<p>所以，专门定义了一组复合标记来定义删除线：以<code>[=</code>和<code>=]</code>包围的文本会加上删除线，例如：这是一段<s>加删除线的文本</s>。</p>
+<p>加删除线的文本，在编译为 Html 后会被<code>&lt;s&gt;</code>和<code>&lt;/s&gt;</code>标签包围。</p>
+<p>也可以直接手工输入<code>&lt;s&gt;</code>和<code>&lt;/s&gt;</code>标签。</p>
+<p>如果想要输入<code>[=</code>和<code>=]</code>本身，请使用转义字符。办法是在中间添加一个反斜杠字符<code>\</code>。也就是写成<code>[&#0092;=</code>和<code>=&#0092;]</code>。</p>
+<p>但是在代码块中，没有必要书写转义，直接这样写就可以：</p>
+<pre><code>□□□□这是删除线标记：[=和=]。
+</code></pre>
+<p>上面的<code>□</code>表示空格字符。</p>
+</div><h2 class='title' id='title34' title='点击展开/折叠'><span id='header_span34' class='header_span'>◆ </span>5.6.材料出处</h2><script>$(document).ready(function(){$("#title34").click(function(){$("#panel34").toggle();if($("#panel34").is(":hidden")){$("#header_span34").html('◆ ');}else{$("#header_span34").html('◇ ');}});});</script><div class='panel_title_h2' id='panel34' style='display: none;'>
+<p>如果一行文本以<code>破折号</code>开头，并紧跟一对<code>书名号</code>，则会被当作<strong>资料出处</strong>，在编译的 Html 文档中自动右对齐。例如：</p>
+<pre><code>&gt; “焚诗书，坑术士”
+&gt; ——《史记》
+</code></pre>
+<p>编译后会显示为：</p>
+<blockquote>
+  <p>“焚诗书，坑术士”</p>
+  
+  <p class='ex_m_cc'>——《史记》</p>
+</blockquote>
+</div><h2 class='title' id='title35' title='点击展开/折叠'><span id='header_span35' class='header_span'>◆ </span>5.7.块引用</h2><script>$(document).ready(function(){$("#title35").click(function(){$("#panel35").toggle();if($("#panel35").is(":hidden")){$("#header_span35").html('◆ ');}else{$("#header_span35").html('◇ ');}});});</script><div class='panel_title_h2' id='panel35' style='display: none;'>
+<p>以<code>&gt;&nbsp;</code>（大于号加空格）开头的行会被转译成html里的&lt;blockquote&gt;&lt;/blockquote&gt;，&gt;符号后的空格可不要。</p>
+<p>考虑到中文输入法频繁切换会很繁琐，所以用<code>》&nbsp;</code>或<code>》　</code>开头也是可以的。</p>
+<p>其实用右单书名号开头（<code>〉&nbsp;</code>或<code>〉　</code>）也行。</p>
+<p>空格也可以省略。</p>
+<p>块引用可以多层嵌套。</p>
+<p>例如：</p>
+<pre><code>> 第一层<br/>> > 第二层<br/>> > > 第三层<br/>> > > > 第四层</code></pre>
+<p>转译后会显示为：</p>
+<blockquote>
+  <p>第一层</p>
+  
+  <blockquote>
+    <p>第二层</p>
+    
+    <blockquote>
+      <p>第三层</p>
+      
+      <blockquote>
+        <p>第四层</p>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+</div><h2 class='title' id='title36' title='点击展开/折叠'><span id='header_span36' class='header_span'>◆ </span>5.8.代码块</h2><script>$(document).ready(function(){$("#title36").click(function(){$("#panel36").toggle();if($("#panel36").is(":hidden")){$("#header_span36").html('◆ ');}else{$("#header_span36").html('◇ ');}});});</script><div class='panel_title_h2' id='panel36' style='display: none;'>
+<p>代码块有两种，一种在行内，另一种可以跨行。</p>
+<p>行内代码块会被编译为 Html <code>&lt;code /&gt;</code>标签。</p>
+<h3 class='title' id='title37' title='点击展开/折叠'><span id='header_span37' class='header_span'>◆ </span>5.8.1.行内代码块</h3><script>$(document).ready(function(){$("#title37").click(function(){$("#panel37").toggle();if($("#panel37").is(":hidden")){$("#header_span37").html('◆ ');}else{$("#header_span37").html('◇ ');}});});</script><div class='panel_title_h3' id='panel37' style='display: none;'>
+<p>行内代码块以两个<code>`</code>字符（即通常在Esc键下方的波形符键上的反引号字符）包围。</p>
+<p>例如下面这行 Markdown 文本：</p>
+<pre><code>这是一小段`代码`。
+常常可以用来描述某种快捷键，例如`Ctrl+F`。
+</code></pre>
+<p>编译为 Html 后会呈现为下面这个样子：</p>
+<p>这是一小段<code>代码</code>。</p>
+<p>常常可以用来描述某种快捷键，例如<code>Ctrl+F</code>。</p>
+</div><h3 class='title' id='title38' title='点击展开/折叠'><span id='header_span38' class='header_span'>◆ </span>5.8.2.多行代码块</h3><script>$(document).ready(function(){$("#title38").click(function(){$("#panel38").toggle();if($("#panel38").is(":hidden")){$("#header_span38").html('◆ ');}else{$("#header_span38").html('◇ ');}});});</script><div class='panel_title_h3' id='panel38' style='display: none;'>
+<p>也可以添加多行代码文本，每行都需要以至少四个半角空格（或以至少一个Tab符）开头。</p>
+<p>例如：下面以“□”表示一个半角英文空格，以“[Tab]”表示一个Tab字符：</p>
+<pre><code>□□□□function DeleteText()□□  
+□□□□{□□  
+□□□□□□□□string s = "示例文本";□□  
+□□□□□□□□...□□  
+□□□□□□□□ClipBoard.Delete();□□  
+□□□□}□□  
+[Tab]function DeleteImage()□□  
+[Tab]{□□  
+[Tab][Tab]Image img = new Image();□□  
+[Tab][Tab]...□□  
+[Tab][Tab]ClipBoard.Delete();□□  
+[Tab]}□□  
+</code></pre>
+<p>转译后会显示为：</p>
+<pre><code>function DeleteText()  
+    {  
+        string s = "示例文本";  
+        ...  
+        ClipBoard.Delete();  
+    }  
+function DeleteImage()  
+    {  
+        Image img = new Image();  
+        ...  
+        ClipBoard.Delete();  
+    }  
+</code></pre>
+</div><h3 class='title' id='title39' title='点击展开/折叠'><span id='header_span39' class='header_span'>◆ </span>5.8.3.代码块与其它元素的冲突</h3><script>$(document).ready(function(){$("#title39").click(function(){$("#panel39").toggle();if($("#panel39").is(":hidden")){$("#header_span39").html('◆ ');}else{$("#header_span39").html('◇ ');}});});</script><div class='panel_title_h3' id='panel39' style='display: none;'>
+<p>很多元素——例如引用文本块、有序列表、无序列表……它们不需要顶格书写——可以在它们前面存在[1，3]个引导空格。但一旦空格数量达到 4 个，立即就会变成代码块。例如下面这些：</p>
+<pre><code>&gt; 看起来是个引用，其实会被原样输出为代码行
+~看起来是个页眉，其实还是代码行
+%看起来是文档标题，也是代码行
++ 看起来是无序列表，其实是代码行
+1. 看起来是有序列表，其实是代码行
+</code></pre>
+<p>而如果前导空格只有 3 个，情况立马就变得不一样。</p>
+</div></div><h2 class='title' id='title40' title='点击展开/折叠'><span id='header_span40' class='header_span'>◆ </span>5.9.列表</h2><script>$(document).ready(function(){$("#title40").click(function(){$("#panel40").toggle();if($("#panel40").is(":hidden")){$("#header_span40").html('◆ ');}else{$("#header_span40").html('◇ ');}});});</script><div class='panel_title_h2' id='panel40' style='display: none;'>
+<p>列表有两种：无序列表、有序列表。</p>
+<h3 class='title' id='title41' title='点击展开/折叠'><span id='header_span41' class='header_span'>◆ </span>5.9.1.无序列表</h3><script>$(document).ready(function(){$("#title41").click(function(){$("#panel41").toggle();if($("#panel41").is(":hidden")){$("#header_span41").html('◆ ');}else{$("#header_span41").html('◇ ');}});});</script><div class='panel_title_h3' id='panel41' style='display: none;'>
+<p>以<code>-</code>、<code>+</code>、<code>*</code>这三个字符开头的行是无序列表项。这三个字符使用任意一个字符都可以，编译后的结果是一样的。</p>
+<p>但是使用<code>*</code>作为列表开头会与<code>加粗、倾斜</code>这两种效果冲突，所以尽可能不要用！！！如果实在必须在一行开头使用<code>*</code>来表示无序列表，要注意<strong>必须在后面跟一个空格（全、半角均可）</strong>；或者格式化一下。</p>
+<p>例如：</p>
+<p>以<code>+</code>号开头：</p>
+<pre><code>+ 无序列表<br/>+ 无序列表<br/>+ 无序列表</code></pre>  
+<p>或者：</p>
+<p>以<code>-</code>号开头：</p>
+<pre><code>- 无序列表<br/>- 无序列表<br/>- 无序列表</code></pre>  
+<p>转译后都会显示为：</p>
+<ul>
+<li><p>无序列表</p></li>
+<li><p>无序列表</p></li>
+<li><p>无序列表</p></li>
+</ul>
+<h4 class='title' id='title42' title='点击展开/折叠'><span id='header_span42' class='header_span'>◆ </span>5.9.1.1.注意：无序列表与加粗可能冲突！！！</h4><script>$(document).ready(function(){$("#title42").click(function(){$("#panel42").toggle();if($("#panel42").is(":hidden")){$("#header_span42").html('◆ ');}else{$("#header_span42").html('◇ ');}});});</script><div class='panel_title_h4' id='panel42' style='display: none;'>
+<p>如下面这种写法会出问题：</p>
+<pre><code>* **想加粗显示的文本**普通文本
+</code></pre>
+<p>编译后会呈现下面的效果：</p>
+<ul>
+<li><ul>
+<li><ul>
+<li>想加粗显示的文本**普通文本</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>看起来在文本上面会出现一个很大的空行，而且位置还更偏右了。稍有点网页制作知识的用户可能以为 CSS 文件出了问题。——但这实际上是因为开头的三个<code>*</code>被解释成了三级无序列表！！！有些浏览器会显示前两级的标志（经常是圆点），但也有些浏览器因为前面两级列表没有文本，不显示这个标志——于是看起来就是一个好大的空白。</p>
+<p>麻烦的还不止如此：双内核浏览器（例如猎豹）的IE兼容模式与 IE11 的效果就不一样；Lunar Markdown Editor 自带的预览界面应该是调用IE内核，但是它的显示效果又是另一个样式。而猎豹的另一个内核又呈现一种样式！！！</p>
+<p>各家浏览器、同一家浏览器的不同版本之间对列表的处理竟然如此不同！这真是令人不知道该说什么了！</p>
+<p>那么，碰到这个情况怎么处理呢？</p>
+<p>答案很简单——<strong>别在列表开头用加粗</strong>效果就成了。</p>
+</div><h4 class='title' id='title43' title='点击展开/折叠'><span id='header_span43' class='header_span'>◆ </span>5.9.1.2.有序列表</h4><script>$(document).ready(function(){$("#title43").click(function(){$("#panel43").toggle();if($("#panel43").is(":hidden")){$("#header_span43").html('◆ ');}else{$("#header_span43").html('◇ ');}});});</script><div class='panel_title_h4' id='panel43' style='display: none;'>
+<p>有序列表由数字开头，后跟句点（或．，也可以是、）。</p>
+<p>例如：</p>
+<pre><code>11.有序列表项1
+1.有序列表项2
+1.有序列表项3
+</code></pre>
+<p>数字不能省略，但顺序可以是乱的，编译后顺序自然就是正确的了。</p>
+<p>转译后会显示为：</p>
+<ol>
+<li><p>有序列表项1</p></li>
+<li><p>有序列表项2</p></li>
+<li><p>有序列表项3</p></li>
+</ol>
+</div><h4 class='title' id='title44' title='点击展开/折叠'><span id='header_span44' class='header_span'>◆ </span>5.9.1.3.如何防止出现意外的有序列表？</h4><script>$(document).ready(function(){$("#title44").click(function(){$("#panel44").toggle();if($("#panel44").is(":hidden")){$("#header_span44").html('◆ ');}else{$("#header_span44").html('◇ ');}});});</script><div class='panel_title_h4' id='panel44' style='display: none;'>
+<p>下面这行 Markdown 文本：</p>
+<pre><code>1986.04，发生了一件事情...
+</code></pre>
+<p>会被解释为有序列表:</p>
+<ol>
+<li>04，发生了一件事情...</li>
+</ol>
+<p>但是显然，这并不是个列表项。怎么才能避免它被解释为有序列表项呢？对<code>.</code>进行一下转义即可：</p>
+<pre><code>1986\.04，发生了一件事情...
+</code></pre>
+<p>这样就会显示成：</p>
+<p>1986.04，发生了一件事情...</p>
+</div></div><h3 class='title' id='title45' title='点击展开/折叠'><span id='header_span45' class='header_span'>◆ </span>5.9.2.嵌套列表</h3><script>$(document).ready(function(){$("#title45").click(function(){$("#panel45").toggle();if($("#panel45").is(":hidden")){$("#header_span45").html('◆ ');}else{$("#header_span45").html('◇ ');}});});</script><div class='panel_title_h3' id='panel45' style='display: none;'>
+<p>列表可以嵌套，例如： </p>
+<pre><code>+ 嵌套列表项1  
+    + 嵌套列表项2  
++ 嵌套列表项3  
+    + 嵌套列表项4  
+        + 嵌套列表项5  
+</code></pre>
+<p>转译后会显示为：</p>
+<ul>
+<li><p>嵌套列表项1  </p>
+<ul>
+<li>嵌套列表项2  </li>
+</ul></li>
+<li><p>嵌套列表项3  </p>
+<ul>
+<li><p>嵌套列表项4  </p>
+<ul>
+<li>嵌套列表项5  </li>
+</ul></li>
+</ul></li>
+</ul>
+<h4 class='title' id='title46' title='点击展开/折叠'><span id='header_span46' class='header_span'>◆ </span>5.9.2.1.注意</h4><script>$(document).ready(function(){$("#title46").click(function(){$("#panel46").toggle();if($("#panel46").is(":hidden")){$("#header_span46").html('◆ ');}else{$("#header_span46").html('◇ ');}});});</script><div class='panel_title_h4' id='panel46' style='display: none;'>
+<p>嵌套列表、引用、代码块都涉及 Tab 符或空格缩进，很容易混淆，高亮显示也是不准确的。因此建议不要同时使用这三种元素。</p>
+</div></div></div><h2 class='title' id='title47' title='点击展开/折叠'><span id='header_span47' class='header_span'>◆ </span>5.10.注释</h2><script>$(document).ready(function(){$("#title47").click(function(){$("#panel47").toggle();if($("#panel47").is(":hidden")){$("#header_span47").html('◆ ');}else{$("#header_span47").html('◇ ');}});});</script><div class='panel_title_h2' id='panel47' style='display: none;'>
+<p>注释有三种，各不相同，有些会被编译到 Html 文档中，有些不会；有的编译到 Html 文档中也不会显示，有的则会显示。</p>
+<h3 class='title' id='title48' title='点击展开/折叠'><span id='header_span48' class='header_span'>◆ </span>5.10.1.以分号开头的注释</h3><script>$(document).ready(function(){$("#title48").click(function(){$("#panel48").toggle();if($("#panel48").is(":hidden")){$("#header_span48").html('◆ ');}else{$("#header_span48").html('◇ ');}});});</script><div class='panel_title_h3' id='panel48' style='display: none;'>
+<p>以<code>分号</code>开头的注释行，<strong>不会</strong>被编译到html文档中。</p>
+<p>中文全角分号、英文半角分号均可，但需要顶格。</p>
+<p>例如：</p>
+<pre><code>；你不会在浏览器中看到这行注释，
+；甚至也不会在 Html 文档中看到
+</code></pre>
+<h4 class='title' id='title49' title='点击展开/折叠'><span id='header_span49' class='header_span'>◆ </span>5.10.1.1.特殊的分号注释</h4><script>$(document).ready(function(){$("#title49").click(function(){$("#panel49").toggle();if($("#panel49").is(":hidden")){$("#header_span49").html('◆ ');}else{$("#header_span49").html('◇ ');}});});</script><div class='panel_title_h4' id='panel49' style='display: none;'>
+<p>以分号开头的注释还有些别致的功能：</p>
+<ul>
+<li><p>指定演示模式</p>
+<p>；PM：#</p>
+<p>；PM：-</p>
+<p>；PM：{</p></li>
+</ul>
+<blockquote>
+  <p>上面三行分别表示按<code>一级标题</code>、<code>水平线</code>、<code>自定义折叠区</code>来演示。</p>
+</blockquote>
+<ul>
+<li><p>指示当前文档某个部分</p>
+<p>；TODO： 表示待完成</p>
+<p>；DOING：表示正在完成</p>
+<p>；DONE： 表示已完成</p></li>
+</ul>
+</div></div><h3 class='title' id='title50' title='点击展开/折叠'><span id='header_span50' class='header_span'>◆ </span>5.10.2.以冒号开头的注释</h3><script>$(document).ready(function(){$("#title50").click(function(){$("#panel50").toggle();if($("#panel50").is(":hidden")){$("#header_span50").html('◆ ');}else{$("#header_span50").html('◇ ');}});});</script><div class='panel_title_h3' id='panel50' style='display: none;'>
+<p>以<code>冒号</code>开头的注释，<strong>会</strong>被翻译到 Html 文档中，并且会<strong>呈现出特殊的效果</strong>。例如像下面这样写：</p>
+<pre><code>：这是会显示在浏览器中的注释。
+</code></pre>
+<p>在浏览器中的效果会像下面这样：</p>
+<p class="comment">这是会显示在浏览器的注释。</p>
+</div><h3 class='title' id='title51' title='点击展开/折叠'><span id='header_span51' class='header_span'>◆ </span>5.10.3.Html 格式的注释</h3><script>$(document).ready(function(){$("#title51").click(function(){$("#panel51").toggle();if($("#panel51").is(":hidden")){$("#header_span51").html('◆ ');}else{$("#header_span51").html('◇ ');}});});</script><div class='panel_title_h3' id='panel51' style='display: none;'>
+<p>虽然也可以使用 Html 的注释，但不建议使用——因为会让 Markdown 显得很凌乱。</p>
+<p>这样写的注释会出现在编译后的 Html 文件中，但不会被浏览器显示出来。例如写成下面这样：</p>
+<pre><code>&lt;!--这些是注释文本，不会显示--&gt;
+</code></pre>
+<!--这些是注释文本，不会显示-->
+<p>编译后的 Html 文档中有这行文本，但浏览器不会显示它。这与分号开头的注释行不同，Html 方式注释的文字仍然会出现在编译后的 Html 文件中，只是不显示而已。</p>
+</div></div><h2 class='title' id='title52' title='点击展开/折叠'><span id='header_span52' class='header_span'>◆ </span>5.11.放大显示文本</h2><script>$(document).ready(function(){$("#title52").click(function(){$("#panel52").toggle();if($("#panel52").is(":hidden")){$("#header_span52").html('◆ ');}else{$("#header_span52").html('◇ ');}});});</script><div class='panel_title_h2' id='panel52' style='display: none;'>
+<p>2016年12月6日添加此功能，可以支持将一行短文本按指定倍数放大并居中显示。</p>
+<p>此功能专门用以显示短的强调文本。放大倍数从 1 倍到 10 倍。</p>
+<p>基本语法是：</p>
+<pre><code>&lt;2.5&gt;要强调的文本
+</code></pre>
+<p>以一对尖括号包围数字字符开头，其后的文本会按指定倍数强调显示。</p>
+<p>上行编译为 Html 后显示效果如下：</p>
+<div class="multiple-text"><p style="font-size:2.5em;">要强调的文本</p></div>
+</div><h2 class='title' id='title53' title='点击展开/折叠'><span id='header_span53' class='header_span'>◆ </span>5.12.链接</h2><script>$(document).ready(function(){$("#title53").click(function(){$("#panel53").toggle();if($("#panel53").is(":hidden")){$("#header_span53").html('◆ ');}else{$("#header_span53").html('◇ ');}});});</script><div class='panel_title_h2' id='panel53' style='display: none;'>
+<p>链接分几种：文字超链接、图像超链接、索引超链接。</p>
+<h3 class='title' id='title54' title='点击展开/折叠'><span id='header_span54' class='header_span'>◆ </span>5.12.1.文字超链接</h3><script>$(document).ready(function(){$("#title54").click(function(){$("#panel54").toggle();if($("#panel54").is(":hidden")){$("#header_span54").html('◆ ');}else{$("#header_span54").html('◇ ');}});});</script><div class='panel_title_h3' id='panel54' style='display: none;'>
+<p><a href="@href"></a></p>
+<p>文字超链接的使用较为常见。其基本格式如下所示：</p>
+<pre><code>[LME Home](https://gitee.com/lunarsf/Lunar-Markdown-Editor "我的项目首页")
+</code></pre>
+<p>编译成 Html 后的效果是：<a href="https://gitee.com/lunarsf/Lunar-Markdown-Editor" title="我的项目首页">LME Home</a></p>
+<p>鼠标移动到链接上时会显示“我的项目首页”这几个字的提示。</p>
+<p>尽管 Markdown 中插入文字链接的语法已经进行了简化，但如果考虑到文件所处的目录层次，要编写一个链接还是有些复杂。这时，如果要链接的 Html 文件满足下列条件，就可以使用内置功能自动添加链接了：</p>
+<ul>
+<li><p>目标 Html 文件在当前工作区目录下</p></li>
+<li><p>目标 Html 文件是由当前工作区目录下的某个 Markdown 文件编译成的</p></li>
+</ul>
+<p>具体做法是：</p>
+<ol>
+<li><p>在 Lunar Markdown Editor 左侧的<code>工作区资源管理器</code>中选择该 Markdown 文件</p></li>
+<li><p>在该 Markdown 文件上单击鼠标右键，弹出的快捷菜单</p></li>
+<li><p>在快捷菜单中用鼠标左键单击<code>作为链接插入到当前文档(L)</code>菜单项</p></li>
+</ol>
+<p>这样就可以自动添加对该 Markdown 文档编译后的 <code>Html 网页文件</code>的引用链接。</p>
+<p>注意：这样添加的链接，目标永远不会是 Markdown 文件本身，而是它被编译后生成的 Html 文件。</p>
+</div><h3 class='title' id='title55' title='点击展开/折叠'><span id='header_span55' class='header_span'>◆ </span>5.12.2.锚</h3><script>$(document).ready(function(){$("#title55").click(function(){$("#panel55").toggle();if($("#panel55").is(":hidden")){$("#header_span55").html('◆ ');}else{$("#header_span55").html('◇ ');}});});</script><div class='panel_title_h3' id='panel55' style='display: none;'>
+<p>锚是一种特殊的链接，专门用以标志出可供跳转到位置。</p>
+<p>例如在文档尾部添加如下这一行文本：</p>
+<pre><code>[](@PageFooter 页脚)
+</code></pre>
+<p>这样可以在文档尾部添加一个名为“PageFooter”的锚。</p>
+<p>然后，在这里添加这样一行文本：</p>
+<pre><code>[跳转到页脚位置](#PageFooter)
+</code></pre>
+<p>这样就会在 Html 文档中出现一个超链接：<a href="#PageFooter">跳转到页脚位置</a>←点击这个链接试试看。</p>
+<p>如果觉得手工寻找可用的锚太麻烦，可以在<code>复合查找</code>工具框的下部找到<code>查找“锚”</code>这个按钮，点击一下，就可以根据<code>查找范围</code>框指定的范围来查找所有可以引用的锚了。</p>
+<p>你可以在查找到的“锚”上用鼠标右键单击一下，在弹出菜单中点击对应菜单项来实现在当前编辑的文档中引用此“锚”。</p>
+</div><h3 class='title' id='title56' title='点击展开/折叠'><span id='header_span56' class='header_span'>◆ </span>5.12.3.图像超链接</h3><script>$(document).ready(function(){$("#title56").click(function(){$("#panel56").toggle();if($("#panel56").is(":hidden")){$("#header_span56").html('◆ ');}else{$("#header_span56").html('◇ ');}});});</script><div class='panel_title_h3' id='panel56' style='display: none;'>
+<p>Markdown 本身在添加图像时的语法是这个样子：</p>
+<pre><code>![找不到图像文件时显示的文本](图像路径)
+</code></pre>
+<p>比文字超链接也就多个惊叹号。</p>
+<p>可以直接从《画图》程序中复制一块图像数据粘贴到当前编辑位置，这时，会要求你给这块图像数据起个名字，以便保存为图像文件。</p>
+</div><h3 class='title' id='title57' title='点击展开/折叠'><span id='header_span57' class='header_span'>◆ </span>5.12.4.绝对路径文件链接</h3><script>$(document).ready(function(){$("#title57").click(function(){$("#panel57").toggle();if($("#panel57").is(":hidden")){$("#header_span57").html('◆ ');}else{$("#header_span57").html('◇ ');}});});</script><div class='panel_title_h3' id='panel57' style='display: none;'>
+<p>LME 只支持几种常见的图像格式：png、jpg（jpeg）、gif、bmp 等。</p>
+<p>一般情况下，当从 Windows 资源管理器中拖动一个（或几个）常见格式的图像文件到 LME 的文本编辑器中并放置的时候，LME 会执行“将图像文件复制到当前编辑器中正在编辑的 Markdown 文档在磁盘上的资源文件夹下，并自动生成图像链接”这一操作。</p>
+<blockquote>
+  <p>此时生成的图像文件链接是使用相对路径的，即使更改了工作区根目录的名称或移动了工作区根目录的磁盘位置，这些图像链接仍然有效。</p>
+</blockquote>
+<p>而如果拖动的不是一个常见格式的图像文件，则不会执行“复制到当前 Markdown 文件的资源文件夹”这一操作，且生成的链接不是使用相对路径，而是使用绝对路径。</p>
+<blockquote>
+  <p>如果将来被引用的文件移动了位置或者名称被修改，则此链接会失效。这种链接只用于记录某文件此时在磁盘上的绝对路径。</p>
+</blockquote>
+<p>由于这种链接在编译为网页后给其他人看几乎没有实际意义（或实际意义不大），所以必要时可以考虑将该链接所在行设置为注释。</p>
+<blockquote>
+  <p>设置为注释后，按<code>Ctrl+G</code>，“跳转到链接”这一功能仍然有效。——如果当前操作系统中安装了对应文件类型的程序，会自动调用该程序打开链接指向（引用）的文件。</p>
+</blockquote>
+</div><h3 class='title' id='title58' title='点击展开/折叠'><span id='header_span58' class='header_span'>◆ </span>5.12.5.索引超链接</h3><script>$(document).ready(function(){$("#title58").click(function(){$("#panel58").toggle();if($("#panel58").is(":hidden")){$("#header_span58").html('◆ ');}else{$("#header_span58").html('◇ ');}});});</script><div class='panel_title_h3' id='panel58' style='display: none;'>
+<p>例如：</p>
+<pre><code>[参见百度官网][1x]
+[1x]:http://www.baidu.com
+</code></pre>
+<p>转译后会显示为：</p>
+<p>[ 我的小窝][1x]</p>
+</div><h3 class='title' id='title59' title='点击展开/折叠'><span id='header_span59' class='header_span'>◆ </span>5.12.6.自动链接</h3><script>$(document).ready(function(){$("#title59").click(function(){$("#panel59").toggle();if($("#panel59").is(":hidden")){$("#header_span59").html('◆ ');}else{$("#header_span59").html('◇ ');}});});</script><div class='panel_title_h3' id='panel59' style='display: none;'>
+<p>自动链接直接用一对尖括号包围即可，例如：</p>
+<pre><code>&lt;http://www.baidu.com&gt;
+</code></pre>
+<p>转译后会显示为：</p>
+<p><a href="http://www.baidu.com">http://www.baidu.com</a></p>
+<p>电子邮件地址也可以这样做。例如下面：</p>
+<pre><code>&lt;lunarsf@163.com&gt;
+</code></pre>
+<p>转译后会显示为：</p>
+<p><a href="&#x6d;&#97;&#105;&#108;t&#x6f;:&#x6c;u&#110;a&#114;&#115;&#102;&#64;&#49;&#54;&#51;&#x2e;&#x63;&#x6f;&#x6d;">&#x6c;u&#110;a&#114;&#115;&#102;&#64;&#49;&#54;&#51;&#x2e;&#x63;&#x6f;&#x6d;</a>←点击生成的这个链接会打开计算机上安装的电子邮件客户端程序。</p>
+</div></div></div><h1 class='title' id='title60' title='点击展开/折叠'><span id='header_span60' class='header_span'>◆ </span>6.查找/替换功能</h1><script>$(document).ready(function(){$("#title60").click(function(){$("#panel60").toggle();if($("#panel60").is(":hidden")){$("#header_span60").html('◆ ');}else{$("#header_span60").html('◇ ');}});});</script><div class='panel_title_h1' id='panel60' style='display: none;'>
+<p>查找、替换功能可以支持通配符、正则表达式，也可以只使用普通文本作为查找关键字。</p>
+<p>其中，考虑到批量替换不可撤销，可能造成数据被意外破坏，所以<strong>替换功能不能跨文档执行</strong>。</p>
+<h2 class='title' id='title61' title='点击展开/折叠'><span id='header_span61' class='header_span'>◆ </span>6.1.关于通配符</h2><script>$(document).ready(function(){$("#title61").click(function(){$("#panel61").toggle();if($("#panel61").is(":hidden")){$("#header_span61").html('◆ ');}else{$("#header_span61").html('◇ ');}});});</script><div class='panel_title_h2' id='panel61' style='display: none;'>
+<p>有时候我们要同时查找类似“第一批”和“第二批”这样的字符串，此时就可以使用通配符来解决问题。</p>
+<blockquote>
+  <p>此例中可以先勾选“使用通配符”，然后查找<code>第.批</code>。</p>
+</blockquote>
+<table><caption>通配符列表</caption>
+<tr><th style="TEXT-ALIGN: center;">通配符</th><th style="TEXT-ALIGN: center;">含义</th><th style="TEXT-ALIGN: center;">备注</th></tr><tr><td style="TEXT-ALIGN: left;">.</td>
+<td style="TEXT-ALIGN: left;">表示一个任意字符</td>
+<td style="TEXT-ALIGN: left;">不能匹配回车符、换行符等</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">*</td>
+<td style="TEXT-ALIGN: left;">表示零或多个任意字符</td>
+<td style="TEXT-ALIGN: left;">不能匹配回车符、换行符等</td>
+</tr>
+</table>
+<blockquote>
+  <p>在“替换”框中无法使用通配符。</p>
+</blockquote>
+</div><h2 class='title' id='title62' title='点击展开/折叠'><span id='header_span62' class='header_span'>◆ </span>6.2.转义字符</h2><script>$(document).ready(function(){$("#title62").click(function(){$("#panel62").toggle();if($("#panel62").is(":hidden")){$("#header_span62").html('◆ ');}else{$("#header_span62").html('◇ ');}});});</script><div class='panel_title_h2' id='panel62' style='display: none;'>
+<p>有时候，必须替换一些特殊字符，例如回车换行、制表符等。由于“查找”、“替换”这两个输入框都不支持直接输入多行文本，也没法子输入制表符，所以只能使用<code>转义符</code>来解决问题。</p>
+<p>无论“查找”框的通配符的开关是否处于开启状态，“查找”框和“替换”框的都总是开启字符转义的。</p>
+<p>但如果开启了“使用正则表达式”选项，则查找时按正则表达式的规则来处理转义字符。</p>
+<blockquote>
+  <p>【匹配大小写】、【匹配整个单词】、【正则表达式】和【使用通配符】这四个选项都支持查找框。</p>
+  
+  <p>【反向查找】既支持查找，又支持替换。</p>
+</blockquote>
+<table><caption>转义符列表</caption>
+<tr><th style="TEXT-ALIGN: center;">转义符</th><th style="TEXT-ALIGN: center;">含义</th><th style="TEXT-ALIGN: center;">备注</th></tr><tr><td style="TEXT-ALIGN: left;">\</td>
+<td style="TEXT-ALIGN: left;">表示一个单独的\</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">\t</td>
+<td style="TEXT-ALIGN: left;">表示一个制表符</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">\r\n</td>
+<td style="TEXT-ALIGN: left;">表示一个段落标记</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">\x</td>
+<td style="TEXT-ALIGN: left;">表示引用查找的结果</td>
+<td style="TEXT-ALIGN: left;">仅支持“替换框”</td>
+</tr>
+</table>
+<blockquote>
+  <p>注意：必须是全英文。</p>
+  
+  <p>那如果要查找<code>\r\n</code>本身怎么办？输入<code>\\r\\n</code>即可。</p>
+</blockquote>
+<h3 class='title' id='title63' title='点击展开/折叠'><span id='header_span63' class='header_span'>◆ </span>6.2.1.在替换中引用查找到的文本</h3><script>$(document).ready(function(){$("#title63").click(function(){$("#panel63").toggle();if($("#panel63").is(":hidden")){$("#header_span63").html('◆ ');}else{$("#header_span63").html('◇ ');}});});</script><div class='panel_title_h3' id='panel63' style='display: none;'>
+<p>例如，假使有个文档中有王家兄弟的名字若干，这些名字里包括<code>王大</code>、<code>王二</code>、<code>王三</code>、<code>王四</code>、<code>王五</code>、<code>王六</code>。</p>
+<p>现在要求：将文档中的所有<code>王二</code>和<code>王五</code>都替换成<code>^o^王二</code>、<code>^o^王五</code>这样子，其他兄弟的名字都保持原样。</p>
+<p>怎么做呢？</p>
+<p>在“查找”框中输入：王[二五]</p>
+<p>勾选“使用正则表达式”</p>
+<blockquote>
+  <p>如果所有兄弟的名字都要改，可以使用通配符。但本例中要求其他兄弟的名字不改，这时候用正则表达式可以达到目的。</p>
+</blockquote>
+<p>在“替换”框中输入：^o^\x</p>
+<blockquote>
+  <p>查找框中的正则表达式会找出所有<code>王二</code>与<code>王五</code>。替换框中的<code>\x</code>，则表示引用查找到的这些<code>王二</code>与<code>王五</code>。</p>
+</blockquote>
+<p>点击“全部替换”即可。</p>
+</div><h3 class='title' id='title64' title='点击展开/折叠'><span id='header_span64' class='header_span'>◆ </span>6.2.2.快速替换掉多余的空行的办法</h3><script>$(document).ready(function(){$("#title64").click(function(){$("#panel64").toggle();if($("#panel64").is(":hidden")){$("#header_span64").html('◆ ');}else{$("#header_span64").html('◇ ');}});});</script><div class='panel_title_h3' id='panel64' style='display: none;'>
+<p>勾选“使用正则表达式”，输入<code>(\r\n){1，}</code>；然后在替换框中输入<code>\r\n</code>（注意没有括号），点击“全部替换”按钮即可。</p>
+</div></div><h2 class='title' id='title65' title='点击展开/折叠'><span id='header_span65' class='header_span'>◆ </span>6.3.如何快速查找标题</h2><script>$(document).ready(function(){$("#title65").click(function(){$("#panel65").toggle();if($("#panel65").is(":hidden")){$("#header_span65").html('◆ ');}else{$("#header_span65").html('◇ ');}});});</script><div class='panel_title_h2' id='panel65' style='display: none;'>
+<p>如果有特殊要求，又想快速查找当前文档中的标题，使用正则表达式是个好主意。</p>
+<blockquote>
+  <p>主界面已经提供了“查找标题”按钮，可以查找某个级别的所有标题，也可以查找所有六级标题。但无法只查找指定的某几个级别的标题。</p>
+</blockquote>
+<p>请在当前正在编辑的文档中任意位置按下<code>Ctrl+F</code>快捷键，在展开的<code>查找/替换</code>面板中找到<code>查找框</code>，输入下列字符：</p>
+<pre><code> ^ {0,3}#{1,6}[^#].*$
+</code></pre>
+<blockquote>
+  <p>这行文本的意思是：查找所有以1~6个<code>#</code>字符开头的行，行首可以有0~3个空格。</p>
+</blockquote>
+<p>然后，点击选中<code>使用正则表达式</code>复选框（使之被勾选）。</p>
+<p>再点击右侧放大镜查找图标按钮。</p>
+<p>如果只想查找二级标题，把上述代码改成：</p>
+<pre><code> ^ {0,3}#{2,2}[^#].*$
+</code></pre>
+<p>如果想查找三、四级标题，改成这样：</p>
+<pre><code> ^ {0,3}#{3,4}[^#].*$
+</code></pre>
+</div></div><h1 class='title' id='title66' title='点击展开/折叠'><span id='header_span66' class='header_span'>◆ </span>7.善用 Tab 键移动插入点</h1><script>$(document).ready(function(){$("#title66").click(function(){$("#panel66").toggle();if($("#panel66").is(":hidden")){$("#header_span66").html('◆ ');}else{$("#header_span66").html('◇ ');}});});</script><div class='panel_title_h1' id='panel66' style='display: none;'>
+<p>当插入点恰好位于下列标点符号（或符号组合）两侧时，按<code>Tab</code>键或<code>Shift+Tab</code>键，可以向前或向后越过这些符号移动插入点。</p>
+<table><tr><th style="TEXT-ALIGN: center;">符号（组合）</th><th style="TEXT-ALIGN: center;">说明</th></tr><tr><td style="TEXT-ALIGN: right;">**</td>
+<td style="TEXT-ALIGN: left;">双星号，用于加粗效果</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">__</td>
+<td style="TEXT-ALIGN: left;">双下划线，用于加粗效果</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">*</td>
+<td style="TEXT-ALIGN: left;">单星号，用于倾斜效果</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">_</td>
+<td style="TEXT-ALIGN: left;">单下划线，用于倾斜效果</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">(</td>
+<td style="TEXT-ALIGN: left;">左括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">)</td>
+<td style="TEXT-ALIGN: left;">右括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">（</td>
+<td style="TEXT-ALIGN: left;">左全角括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">）</td>
+<td style="TEXT-ALIGN: left;">右全角括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">[</td>
+<td style="TEXT-ALIGN: left;">左方括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">]</td>
+<td style="TEXT-ALIGN: left;">右方括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">{</td>
+<td style="TEXT-ALIGN: left;">左花括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">}</td>
+<td style="TEXT-ALIGN: left;">右花括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">&lt;</td>
+<td style="TEXT-ALIGN: left;">小于号（左尖括号）</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">></td>
+<td style="TEXT-ALIGN: left;">大于号（右尖括号）</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">《</td>
+<td style="TEXT-ALIGN: left;">左双书名号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">》</td>
+<td style="TEXT-ALIGN: left;">右双书名号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">〈</td>
+<td style="TEXT-ALIGN: left;">左单书名号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">〉</td>
+<td style="TEXT-ALIGN: left;">右单书名号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">HtmlTag</td>
+<td style="TEXT-ALIGN: left;">Html 标签，形如：&lt;xxx&gt;</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">[=</td>
+<td style="TEXT-ALIGN: left;">左删除线标记</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">=]</td>
+<td style="TEXT-ALIGN: left;">右删除线标记</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">「</td>
+<td style="TEXT-ALIGN: left;">左方引号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">」</td>
+<td style="TEXT-ALIGN: left;">右方引号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">『</td>
+<td style="TEXT-ALIGN: left;">左方双引号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">』</td>
+<td style="TEXT-ALIGN: left;">右方双引号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">〖</td>
+<td style="TEXT-ALIGN: left;">左空心方括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">〗</td>
+<td style="TEXT-ALIGN: left;">右空心方括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">【</td>
+<td style="TEXT-ALIGN: left;">左实心方括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">】</td>
+<td style="TEXT-ALIGN: left;">右实心方括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">［</td>
+<td style="TEXT-ALIGN: left;">左全角方括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">］</td>
+<td style="TEXT-ALIGN: left;">右全角方括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">｛</td>
+<td style="TEXT-ALIGN: left;">左全角花括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">｝</td>
+<td style="TEXT-ALIGN: left;">右全角花括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">°</td>
+<td style="TEXT-ALIGN: left;">度</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">＇</td>
+<td style="TEXT-ALIGN: left;">分</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">＂</td>
+<td style="TEXT-ALIGN: left;">秒</td>
+</tr>
+</table>
+<blockquote>
+  <p>之所以必须恰好在插入点左侧或右侧是考虑到毕竟很多时候还是需要输入Tab字符的，所以不能把功能全部写死。</p>
+</blockquote>
+</div><h1 class='title' id='title67' title='点击展开/折叠'><span id='header_span67' class='header_span'>◆ </span>8.粘贴/拖放图像文件</h1><script>$(document).ready(function(){$("#title67").click(function(){$("#panel67").toggle();if($("#panel67").is(":hidden")){$("#header_span67").html('◆ ');}else{$("#header_span67").html('◇ ');}});});</script><div class='panel_title_h1' id='panel67' style='display: none;'>
+<p>当我们需要在 Html 中包含图像文件时，如果总是自己去编写文件引用路径会是个很烦琐的工作。本程序可以直接从图像编辑软件（例如 Windows 操作系统自带的《画图》）中复制出图像数据块，然后向当前正在编辑的 Markdown 文档中执行<code>粘贴</code>操作——然后在提示框中输入文件短名即可自动完成<u>保存文件、编制相对引用路径、插入链接文本</u>等一系列操作，十分方便。</p>
+<p>如果磁盘上已经存在图像文件，你甚至可以直接将这些图像文件拖动到编辑区——所有引用链接都会自动生成。而且这些图像文件都会被复制到当前 Markdown 文件的资源文件夹中。</p>
+<p>——这一切都很简便。</p>
+<p>本程序支持的图像文件格式包括：</p>
+<ul>
+<li><p>bmp</p></li>
+<li><p>ico</p></li>
+<li><p>png</p></li>
+<li><p>gif</p></li>
+<li><p>jpg(jpeg)</p></li>
+<li><p>tiff</p></li>
+</ul>
+</div><h1 class='title' id='title68' title='点击展开/折叠'><span id='header_span68' class='header_span'>◆ </span>9.使用 Html 标签</h1><script>$(document).ready(function(){$("#title68").click(function(){$("#panel68").toggle();if($("#panel68").is(":hidden")){$("#header_span68").html('◆ ');}else{$("#header_span68").html('◇ ');}});});</script><div class='panel_title_h1' id='panel68' style='display: none;'>
+<p>Markdown 常常会被编译成 Html 文档，所以也不排斥直接编写 Html 标签。甚至由于 Markdown 语法毕竟比较简单，远不及 Html 本身复杂，提供的效果也不够。有些情况下还是直接编写 Html 标签更方便些。</p>
+<p>用这种方法就失去了 Markdown 快速编写的本意了，所以只适用于小规模、特殊需要的场合。</p>
+<blockquote>
+  <p>某些情况下，直接编写 Html 标签可能会出现一些意外的结果——这是由于本程序使用的开源 Markdown 编译器本身就很有个性！例如直接编写&lt;H1&gt;标签，编译后其行为与使用<code>#</code>开头的标题是有差别的。</p>
+</blockquote>
+</div><h1 class='title' id='title69' title='点击展开/折叠'><span id='header_span69' class='header_span'>◆ </span>10.表格处理</h1><script>$(document).ready(function(){$("#title69").click(function(){$("#panel69").toggle();if($("#panel69").is(":hidden")){$("#header_span69").html('◆ ');}else{$("#header_span69").html('◇ ');}});});</script><div class='panel_title_h1' id='panel69' style='display: none;'>
+<ul>
+<li><p>表格以<code>｜</code>或<code>|</code>来作为各单元格之间的分割线。</p></li>
+<li><p>表格的列数以单元格最多的列为准。</p></li>
+<li><p>表格的每一行以<code>｜</code>或<code>|</code>来开头并结尾。</p></li>
+</ul>
+<p>如果比较懒的话，开头、结尾的竖线也可以不输入——表格格式化时会自动添加的。</p>
+<ul>
+<li>表格输入完成后，可以按<code>Ctrl+Shift+T</code>对表格进行格式化。</li>
+</ul>
+<p>格式化与否对编译后输出的html文档没有影响。</p>
+<ul>
+<li>表格可以有标题</li>
+</ul>
+<p>第一行只有一个单元格（首尾用竖线包围），会被解释为表格标题。</p>
+<p>第二行通常会被解释为表头。表头总是居中对齐的，不受列对齐定义行的影响。</p>
+<p>其实表头可以超过一行——如果第三行不是“列对齐方式定义行”的话。</p>
+<p>第三行通常是“列对齐方式定义行”。这一行指定表格对应列中的单元格以何种方式对齐。</p>
+<p>例如：</p>
+<pre><code>｜：－－｜：－：｜－：｜－｜
+</code></pre>
+<p>在定义各列对齐方式时，冒号在左就是左对齐，在右就是右对齐，左右都有表示居中。</p>
+<p>上面这行表示该表格中第一列中的文本左对齐、第二列居中对齐、第三列右对齐。那么第四列呢？第四列没有冒号——默认左齐！</p>
+<p>也可以直接省略第4列的对齐定义。</p>
+<p>例如：</p>
+<pre><code>｜示例表格｜
+｜表头1｜表头2｜表头3｜
+｜：－｜：－：｜－：｜
+｜单元格01｜单元格02｜单元格03｜单元格04｜
+｜长单元格05｜长单元格06｜长单元格07｜长单元格08｜
+｜单元格09｜单元格10｜...｜
+</code></pre>
+<p>输入完成时直接按<code>Ctrl+Shift+T</code>，会显示为：</p>
+<pre><code>｜                   示例表格                   ｜
+｜==============================================｜
+｜  表头1   ｜  表头2   ｜  表头3   ｜          ｜
+｜:---------｜:--------:｜---------:｜:---------｜
+｜单元格01  ｜ 单元格02 ｜  单元格03｜单元格04  ｜
+｜长单元格05｜长单元格06｜长单元格07｜长单元格08｜
+｜单元格09  ｜ 单元格10 ｜       ...｜          ｜
+</code></pre>
+<p>原表中的第3行，格式化后变成第4行。这行是用来定义对应列中各单元格的对齐方式的。</p>
+<p>如果在这一行的某一段中，加上<code>^</code>字符（输入法处于英文状态时按<code>Shift+6</code>即可输入），那么这一列所有普通单元格的内容均会被替换为从1开始的序号。</p>
+<p>例如下面这个看起来比较乱的源表：</p>
+<pre><code>｜例表｜
+｜序号｜表头一｜表头二｜
+｜：－^｜-|-|
+|单元格01｜单元格02｜单元格03｜
+｜单元格04｜单元格05｜单元格06｜
+</code></pre>
+<p>格式化后，会变成下面这个样子：</p>
+<pre><code>｜            例表            ｜
+｜============================｜
+｜  序号  ｜ 表头一 ｜ 表头二 ｜
+｜:------^｜:-------｜:-------｜
+｜01      ｜单元格02｜单元格03｜
+｜02      ｜单元格05｜单元格06｜
+</code></pre>
+<p>注意观察：“单元格01”和“单元格04”消失了，取而代之的是两个序号。</p>
+<p>如果你在编辑器中使用的是“宋体”或“新宋体”这类不会自动调整字符宽度的字体，那么这上面的文字表还是很整齐的。但如果使用的是微软雅黑等可变宽度字体，那么格式化后的文字表是根本无法对齐的。</p>
+<p>另外，无论在 Markdown 文档中对文字表有没有进行格式化，编译成 Html 后的效果是相同的！</p>
+<p>下面是另一张文字表：</p>
+<pre><code>｜                   示例表格                   ｜
+｜==============================================｜
+｜  表头1   ｜  表头2   ｜  表头3   ｜          ｜
+｜:---------｜:--------:｜---------:｜:---------｜
+｜单元格01  ｜ 单元格02 ｜  单元格03｜单元格04  ｜
+｜长单元格05｜长单元格06｜长单元格07｜长单元格08｜
+｜单元格09  ｜ 单元格10 ｜       ...｜          ｜
+</code></pre>
+<p>编译后会显示为：</p>
+<table><caption>示例表格</caption>
+<tr><th style="TEXT-ALIGN: center;">表头1</th><th style="TEXT-ALIGN: center;">表头2</th><th style="TEXT-ALIGN: center;">表头3</th><th style="TEXT-ALIGN: center;">　</th></tr><tr><td style="TEXT-ALIGN: left;">单元格01</td>
+<td style="TEXT-ALIGN: center;">单元格02</td>
+<td style="TEXT-ALIGN: right;">单元格03</td>
+<td style="TEXT-ALIGN: left;">单元格04</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">长单元格05</td>
+<td style="TEXT-ALIGN: center;">长单元格06</td>
+<td style="TEXT-ALIGN: right;">长单元格07</td>
+<td style="TEXT-ALIGN: left;">长单元格08</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">单元格09</td>
+<td style="TEXT-ALIGN: center;">单元格10</td>
+<td style="TEXT-ALIGN: right;">...</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+</table>
+</div><h1 class='title' id='title70' title='点击展开/折叠'><span id='header_span70' class='header_span'>◆ </span>11.演示功能</h1><script>$(document).ready(function(){$("#title70").click(function(){$("#panel70").toggle();if($("#panel70").is(":hidden")){$("#header_span70").html('◆ ');}else{$("#header_span70").html('◇ ');}});});</script><div class='panel_title_h1' id='panel70' style='display: none;'>
+<p>有时候用户需要类似 PPT 的演示功能，使用 Markdown 来快速制作幻灯片是个好主意。2016年7月，我看到 OsChina 网站上有个名为 Marp 的软件就支持这一功能。这使正在头痛于演示功能不好做的我大受启发——原来“保证页面内容不会因为过多而溢出”这件事情完全可以让用户自己完成。于是决定立即动手使 LME 也支持使用 Markdown 来快速书写幻灯片演示文稿。</p>
+<blockquote>
+  <p>LME 在实现<code>Markdown→幻灯片</code>的时候，虽然是受 Marp 的启发，但谈不上抄袭 Marp——因为我并没有尝试去找 Marp 的源码。与 Marp 相比，LME 在实现这一功能时唯一的相似点就是都支持使用水平线来各分割幻灯片。</p>
+</blockquote>
+<p>LME 的演示功能是按一定规则将当前 Markdown 切分成不同的碎片，然后分别编译为临时 Html 文件并进行演示。</p>
+<p>可以在 Markdown 文档中定义默认的演示规则，这样只需要按下<code>Ctrl+F5</code>即可，不需要再到菜单里一层层去找对应的菜单项了。</p>
+<p>在文档中定义演示方式，语法基本上类似这样：</p>
+<pre><code>；PM：{   |只显示一级折叠区中的内容
+；PM：#   |按一级标题分割演示
+；PM：-   |按水平线分割演示
+</code></pre>
+<p>上面三行示例分别对应一种演示模式，其中<code>&#124;</code>及其后的文本可写可不写（也可以换成其它任意文本）。但当一个文档中出现多行这样的定义时，只有第一个有效。</p>
+<blockquote>
+  <p>所以通常把它写在文件中靠近头部的位置。</p>
+</blockquote>
+<p>其中<code>；</code>表示这行是注释，不会被编译。<code>PM：</code>表示这个注释用于指定演示方式。<code>#</code>、<code>-</code>、<code>{</code>用来指示具体哪种演示方式。</p>
+<p>如果省略具体的演示方式指示文本，则会被当作按一级标题来演示：</p>
+<pre><code>；PM：
+</code></pre>
+<h2 class='title' id='title71' title='点击展开/折叠'><span id='header_span71' class='header_span'>◆ </span>11.1.按自定义折叠区演示</h2><script>$(document).ready(function(){$("#title71").click(function(){$("#panel71").toggle();if($("#panel71").is(":hidden")){$("#header_span71").html('◆ ');}else{$("#header_span71").html('◇ ');}});});</script><div class='panel_title_h2' id='panel71' style='display: none;'>
+<p>此种方式只演示当前 Markdown 文档中由<code>region{...}region</code>包围的部分。</p>
+<blockquote>
+  <p>而且只支持第一层作为幻灯片，其余的自定义折叠区都会原样在演示页面输出。</p>
+  
+  <p>所以想演示一个折叠区，请在外面再嵌套一层。</p>
+</blockquote>
+<p>要让文档默认按此方式演示，请按类似下面的方式定义：</p>
+<pre><code>；PM：R...
+</code></pre>
+<p>字母<code>R</code>之后，可以添加任意其它字符，起作用的只是字母<code>R</code>。而且，从<code>；</code>到字母<code>R</code>，不分大小写、全半角——可以随意组合使用。</p>
+<blockquote>
+  <p>使用左、右花括号字符代替字母<code>R</code>一样有效。这是因为自定义折叠区的定义方式就是<code>region {...} region</code>，所以用字母<code>R</code>和左右花括弧字符很好记。</p>
+</blockquote>
+</div><h2 class='title' id='title72' title='点击展开/折叠'><span id='header_span72' class='header_span'>◆ </span>11.2.演示一级标题及其下属内容</h2><script>$(document).ready(function(){$("#title72").click(function(){$("#panel72").toggle();if($("#panel72").is(":hidden")){$("#header_span72").html('◆ ');}else{$("#header_span72").html('◇ ');}});});</script><div class='panel_title_h2' id='panel72' style='display: none;'>
+<p>此种演示方式之下，第一个一级标题之前的所有内容都不参与演示。</p>
+<blockquote>
+  <p>由于编译前会自动格式化，所以如果整个文档都没有一级标题，只有一些二级标题的话，第一个二级标题会被当作一级标题。</p>
+</blockquote>
+<p>要让文档默认按此方式演示，请按类似下面的方式定义：</p>
+<pre><code>；PM：#...
+</code></pre>
+<p>字符<code>#</code>之后，可以添加任意其它字符，起作用的只是字符<code>#</code>。而且，从<code>；</code>到字符<code>#</code>，不分大小写、全半角——可以随意组合使用。</p>
+<blockquote>
+  <p>六级标题都是以<code>#</code>开头的，这也很好记。</p>
+</blockquote>
+</div><h2 class='title' id='title73' title='点击展开/折叠'><span id='header_span73' class='header_span'>◆ </span>11.3.按水平线分割成幻灯片来演示</h2><script>$(document).ready(function(){$("#title73").click(function(){$("#panel73").toggle();if($("#panel73").is(":hidden")){$("#header_span73").html('◆ ');}else{$("#header_span73").html('◇ ');}});});</script><div class='panel_title_h2' id='panel73' style='display: none;'>
+<p>这种演示方式演示的内容是最完整的——除了用于分割的水平线不会被演示。</p>
+<p>要让文档默认按此方式演示，请按类似下面的方式定义：</p>
+<pre><code>；PM：-...
+</code></pre>
+<p>字符<code>-</code>之后，可以添加任意其它字符，起作用的只是字符<code>-</code>。而且，从<code>；</code>到字符<code>-</code>，不分大小写、全半角——可以随意组合使用。</p>
+<blockquote>
+  <p>水平线的定义方式就是<code>---</code>，这个也很好记。</p>
+</blockquote>
+<p><div id='' class='region'><p class='region_header' id='region_header_11' style=''>关于三种演示模式的冲突</p><div class='region_panel' id='region_panel_11' style='display:block;'><table><tr><td><script>$(document).ready(function() {$('#region_header_11').click(function() {$('#region_panel_11').toggle();});}); </script>
+<p>这三种演示模式在语法上是存在冲突的，尤其是自定义折叠区中包括标题的情况。所以，除非使用<code>按一级标题来切分显示幻灯片片</code>模式，其它情况下都会强行禁止使用自动编号。</p>
+<p>事实上，一个 Markdown 文件很难同时对三种演示模式都提供良好的支持，所以应该一开始就规划好使用哪种模式。</p>
+</td></tr></table>
+</div><p class='region_tail' id='region_tail_11'  style='border-top-color:transparent;border-bottom-width:0;'></p></div><script>$(document).ready(function() {$('#region_tail_11').click(function() {$('#region_panel_11').toggle();});}); </script></p>
+</div></div><h1 class='title' id='title74' title='点击展开/折叠'><span id='header_span74' class='header_span'>◆ </span>12.转义字符</h1><script>$(document).ready(function(){$("#title74").click(function(){$("#panel74").toggle();if($("#panel74").is(":hidden")){$("#header_span74").html('◆ ');}else{$("#header_span74").html('◇ ');}});});</script><div class='panel_title_h1' id='panel74' style='display: none;'>
+<p>Markdown 使用一些字符表示特殊格式，在编译后会被转换成 Html 标签。当需要在编译后的 Html 文件中显示这些字符本身时，就需要转义了。</p>
+<table><caption>转义字符列表</caption>
+<tr><th style="TEXT-ALIGN: center;">转义字符</th><th style="TEXT-ALIGN: center;">转义写法</th><th style="TEXT-ALIGN: center;">备注</th></tr><tr><td style="TEXT-ALIGN: center;">*</td>
+<td style="TEXT-ALIGN: center;">*</td>
+<td style="TEXT-ALIGN: left;">星号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">\</td>
+<td style="TEXT-ALIGN: center;">\</td>
+<td style="TEXT-ALIGN: left;">反斜杠</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">`</td>
+<td style="TEXT-ALIGN: center;">`</td>
+<td style="TEXT-ALIGN: left;">反引号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">_</td>
+<td style="TEXT-ALIGN: center;">_</td>
+<td style="TEXT-ALIGN: left;">下划线符</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">{</td>
+<td style="TEXT-ALIGN: center;">{</td>
+<td style="TEXT-ALIGN: left;">左花括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">}</td>
+<td style="TEXT-ALIGN: center;">}</td>
+<td style="TEXT-ALIGN: left;">右花括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">[</td>
+<td style="TEXT-ALIGN: center;">[</td>
+<td style="TEXT-ALIGN: left;">左方括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">]</td>
+<td style="TEXT-ALIGN: center;">]</td>
+<td style="TEXT-ALIGN: left;">右方括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">(</td>
+<td style="TEXT-ALIGN: center;">(</td>
+<td style="TEXT-ALIGN: left;">左圆括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">)</td>
+<td style="TEXT-ALIGN: center;">)</td>
+<td style="TEXT-ALIGN: left;">右圆括号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">#</td>
+<td style="TEXT-ALIGN: center;">#</td>
+<td style="TEXT-ALIGN: left;">#号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">+</td>
+<td style="TEXT-ALIGN: center;">+</td>
+<td style="TEXT-ALIGN: left;">加号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">-</td>
+<td style="TEXT-ALIGN: center;">-</td>
+<td style="TEXT-ALIGN: left;">减号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">.</td>
+<td style="TEXT-ALIGN: center;">.</td>
+<td style="TEXT-ALIGN: left;">句点</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">!</td>
+<td style="TEXT-ALIGN: center;">!</td>
+<td style="TEXT-ALIGN: left;">惊叹号</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">[&#61;</td>
+<td style="TEXT-ALIGN: center;">[&#0092;=</td>
+<td style="TEXT-ALIGN: left;">删除线头标记</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">=]</td>
+<td style="TEXT-ALIGN: center;">=&#0092;]</td>
+<td style="TEXT-ALIGN: left;">删除线尾标记</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">&#65372;</td>
+<td style="TEXT-ALIGN: center;">&amp;#65372;</td>
+<td style="TEXT-ALIGN: left;">全角竖线，直接输入竖线字符会将该行解释为表格行</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">&#124;</td>
+<td style="TEXT-ALIGN: center;">&amp;#124;</td>
+<td style="TEXT-ALIGN: left;">半角竖线，同上</td>
+</tr>
+<tr><td style="TEXT-ALIGN: center;">&amp;</td>
+<td style="TEXT-ALIGN: center;">&amp;amp;</td>
+<td style="TEXT-ALIGN: left;">和号</td>
+</tr>
+</table>
+<p>在<code>代码块</code>中的符号不需要被转义。所以，在两个反引号之间写上“\`”是没有用的。</p>
+<p><div id='' class='region'><p class='region_header' id='region_header_12' style=''>资料摘录：<strong>“HTML 转义字符”</strong></p><div class='region_panel' id='region_panel_12' style='display:block;'><table><tr><td><script>$(document).ready(function() {$('#region_header_12').click(function() {$('#region_panel_12').toggle();});}); </script>
+<p>诸如 “&lt;” 之类的符号在HTML中拥有特殊的含义，所以在文本中使用它们。</p>
+<p><strong>字符实体</strong></p>
+<p>一些字符在 HTML 中拥有特殊的含义，比如小于号 (&lt;) 用于定义 HTML 标签的开始。如果我们希望浏览器正确地显示这些字符，我们必须在 HTML 源码中插入字符实体。</p>
+<p>字符实体有三部分：一个和号 (&amp;)，一个实体名称，或者 # 和一个实体编号，以及一个分号 (;)。</p>
+<p>要在 HTML 文档中显示小于号，我们需要这样写：&amp;lt; 或者 &amp;#60;</p>
+<p>使用实体名称而不是实体编号的好处在于，名称相对来说更容易记忆。而这么做的坏处是，并不是所有的浏览器都支持最新的实体名称，然而几乎所有的浏览器对实体编号的支持都很好。</p>
+<p><strong>注意</strong>：实体对大小写敏感。</p>
+<table><tr><th style="TEXT-ALIGN: center;">显示结果</th><th style="TEXT-ALIGN: center;">描述</th><th style="TEXT-ALIGN: center;">实体名称</th><th style="TEXT-ALIGN: center;">实体编号</th></tr><tr><td style="TEXT-ALIGN: left;">　</td>
+<td style="TEXT-ALIGN: left;">空格</td>
+<td style="TEXT-ALIGN: left;">&amp;nbsp;</td>
+<td style="TEXT-ALIGN: left;">&amp;#160</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">&lt;</td>
+<td style="TEXT-ALIGN: left;">小于号</td>
+<td style="TEXT-ALIGN: left;">&amp;lt;</td>
+<td style="TEXT-ALIGN: left;">&amp;#60;</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">&gt;</td>
+<td style="TEXT-ALIGN: left;">大于号</td>
+<td style="TEXT-ALIGN: left;">&amp;gt;</td>
+<td style="TEXT-ALIGN: left;">&amp;#62;</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">&amp;</td>
+<td style="TEXT-ALIGN: left;">和号</td>
+<td style="TEXT-ALIGN: left;">&amp;amp;</td>
+<td style="TEXT-ALIGN: left;">&amp;#38;</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">&quot;</td>
+<td style="TEXT-ALIGN: left;">引号</td>
+<td style="TEXT-ALIGN: left;">&amp;quot;</td>
+<td style="TEXT-ALIGN: left;">&amp;#34;</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">'</td>
+<td style="TEXT-ALIGN: left;">撇号</td>
+<td style="TEXT-ALIGN: left;">&amp;apos;（旧版 IE 不支持）</td>
+<td style="TEXT-ALIGN: left;">&amp;#39;</td>
+</tr>
+</table>
+<p><strong>其他一些常用的字符实体</strong></p>
+<table><tr><th style="TEXT-ALIGN: center;">显示结果</th><th style="TEXT-ALIGN: center;">描述</th><th style="TEXT-ALIGN: center;">实体名称</th><th style="TEXT-ALIGN: center;">实体编号</th></tr><tr><td style="TEXT-ALIGN: left;">&cent;</td>
+<td style="TEXT-ALIGN: left;">分</td>
+<td style="TEXT-ALIGN: left;">&amp;cent;</td>
+<td style="TEXT-ALIGN: left;">&amp;#162;</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">&pound;</td>
+<td style="TEXT-ALIGN: left;">镑</td>
+<td style="TEXT-ALIGN: left;">&amp;pound;</td>
+<td style="TEXT-ALIGN: left;">&amp;#163;</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">&yen;</td>
+<td style="TEXT-ALIGN: left;">日圆</td>
+<td style="TEXT-ALIGN: left;">&amp;yen;</td>
+<td style="TEXT-ALIGN: left;">&amp;#165;</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">&sect;</td>
+<td style="TEXT-ALIGN: left;">节</td>
+<td style="TEXT-ALIGN: left;">&amp;sect;</td>
+<td style="TEXT-ALIGN: left;">&amp;#167;</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">&copy;</td>
+<td style="TEXT-ALIGN: left;">版权符</td>
+<td style="TEXT-ALIGN: left;">&amp;copy;</td>
+<td style="TEXT-ALIGN: left;">&amp;#169;</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">&reg;</td>
+<td style="TEXT-ALIGN: left;">注册商标</td>
+<td style="TEXT-ALIGN: left;">&amp;reg;</td>
+<td style="TEXT-ALIGN: left;">&amp;#174;</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">&times;</td>
+<td style="TEXT-ALIGN: left;">乘号</td>
+<td style="TEXT-ALIGN: left;">&amp;times;</td>
+<td style="TEXT-ALIGN: left;">&amp;#215;</td>
+</tr>
+<tr><td style="TEXT-ALIGN: left;">&divide;</td>
+<td style="TEXT-ALIGN: left;">除号</td>
+<td style="TEXT-ALIGN: left;">&amp;divide;</td>
+<td style="TEXT-ALIGN: left;">&amp;#247;</td>
+</tr>
+</table>
+</td></tr></table>
+</div><p class='region_tail' id='region_tail_12' >此框中内容完全摘录自 <a href="http://www.w3chtml.com/html/character.html">w3chtml</a>。</p></div><script>$(document).ready(function() {$('#region_tail_12').click(function() {$('#region_panel_12').toggle();});}); </script></p>
+</div><h1 class='title' id='title75' title='点击展开/折叠'><span id='header_span75' class='header_span'>◆ </span>13.快捷键列表</h1><script>$(document).ready(function(){$("#title75").click(function(){$("#panel75").toggle();if($("#panel75").is(":hidden")){$("#header_span75").html('◆ ');}else{$("#header_span75").html('◇ ');}});});</script><div class='panel_title_h1' id='panel75' style='display: none;'>
+<p>快捷键有三种：</p>
+<ul>
+<li>单键快捷键</li>
+</ul>
+<p>直接按下即可。</p>
+<ul>
+<li>组合快捷键</li>
+</ul>
+<p>这种是同时按下两个或多个快捷键。例如：<code>Ctrl+V</code>表示粘贴文本。使用时先按住<code>Ctrl</code>键不放，再按下<code>V</code>键，最后同时放开（或者先放开<code>V</code>键）。</p>
+<ul>
+<li>顺序快捷键</li>
+</ul>
+<p>这种快捷键也是组合快捷键，但使用方式不同。例如：<code>F11&gt;F7</code>表示将当前透视图（主界面布局状态）切换到“演讲者模式”。使用时先按下<code>F11</code>键并放开，再按下数字<code>F7</code>键并放开即可。</p>
+<h2 class='title' id='title76' title='点击展开/折叠'><span id='header_span76' class='header_span'>◆ </span>13.1.文件管理</h2><script>$(document).ready(function(){$("#title76").click(function(){$("#panel76").toggle();if($("#panel76").is(":hidden")){$("#header_span76").html('◆ ');}else{$("#header_span76").html('◇ ');}});});</script><div class='panel_title_h2' id='panel76' style='display: none;'>
+<table><caption>文件管理</caption>
+<tr><th style="TEXT-ALIGN: center;">快捷键</th><th style="TEXT-ALIGN: center;">功能</th><th style="TEXT-ALIGN: center;">备注</th></tr><tr><td style="TEXT-ALIGN: right;">Ctrl+N</td>
+<td style="TEXT-ALIGN: left;">新建文档</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+O</td>
+<td style="TEXT-ALIGN: left;">打开文档</td>
+<td style="TEXT-ALIGN: left;">字母O</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+S</td>
+<td style="TEXT-ALIGN: left;">保存文档</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+S</td>
+<td style="TEXT-ALIGN: left;">保存所有文档</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+F4</td>
+<td style="TEXT-ALIGN: left;">退出</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Q</td>
+<td style="TEXT-ALIGN: left;">查找资源</td>
+<td style="TEXT-ALIGN: left;">定位到“资源查找框”</td>
+</tr>
+</table>
+</div><h2 class='title' id='title77' title='点击展开/折叠'><span id='header_span77' class='header_span'>◆ </span>13.2.编辑</h2><script>$(document).ready(function(){$("#title77").click(function(){$("#panel77").toggle();if($("#panel77").is(":hidden")){$("#header_span77").html('◆ ');}else{$("#header_span77").html('◇ ');}});});</script><div class='panel_title_h2' id='panel77' style='display: none;'>
+<table><caption>编辑</caption>
+<tr><th style="TEXT-ALIGN: center;">快捷键</th><th style="TEXT-ALIGN: center;">功能</th><th style="TEXT-ALIGN: center;">备注</th></tr><tr><td style="TEXT-ALIGN: right;">Ctrl+Z</td>
+<td style="TEXT-ALIGN: left;">撤销</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Y</td>
+<td style="TEXT-ALIGN: left;">重做</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+X</td>
+<td style="TEXT-ALIGN: left;">剪切</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+D</td>
+<td style="TEXT-ALIGN: left;">删除行</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Shift+Del</td>
+<td style="TEXT-ALIGN: left;">删除行</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Shift+Backspace</td>
+<td style="TEXT-ALIGN: left;">删除到行首</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+F</td>
+<td style="TEXT-ALIGN: left;">查找</td>
+<td style="TEXT-ALIGN: left;">在当前文档中</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Alt+F</td>
+<td style="TEXT-ALIGN: left;">查找</td>
+<td style="TEXT-ALIGN: left;">在打开的所有文档中</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Shift+Delete</td>
+<td style="TEXT-ALIGN: left;">删除行</td>
+<td style="TEXT-ALIGN: left;">与Ctrl+D相同</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+C</td>
+<td style="TEXT-ALIGN: left;">复制</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+V</td>
+<td style="TEXT-ALIGN: left;">粘贴</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+L</td>
+<td style="TEXT-ALIGN: left;">尝试将当前行滚动到编辑纵向居中位置</td>
+<td style="TEXT-ALIGN: left;">适合长文档。要选中整行请改用 Ctrl+Shift+L</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+L</td>
+<td style="TEXT-ALIGN: left;">选中整行</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+A</td>
+<td style="TEXT-ALIGN: left;">全选</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+↑</td>
+<td style="TEXT-ALIGN: left;">行上移</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+I</td>
+<td style="TEXT-ALIGN: left;">行上移</td>
+<td style="TEXT-ALIGN: left;">同 Alt+↑</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+↓</td>
+<td style="TEXT-ALIGN: left;">行下移</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+K</td>
+<td style="TEXT-ALIGN: left;">行下移</td>
+<td style="TEXT-ALIGN: left;">同 Alt+↓</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Enter</td>
+<td style="TEXT-ALIGN: left;">下空行</td>
+<td style="TEXT-ALIGN: left;">在当前行下侧新增一个空行（或表格行）</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Shift+Enter</td>
+<td style="TEXT-ALIGN: left;">上空行</td>
+<td style="TEXT-ALIGN: left;">在当前行上侧新增一个空行（或表格行）</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Tab</td>
+<td style="TEXT-ALIGN: left;">下一单元格</td>
+<td style="TEXT-ALIGN: left;">在文字表中才有效</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Shift+Tab</td>
+<td style="TEXT-ALIGN: left;">上一单元格</td>
+<td style="TEXT-ALIGN: left;">在文字表中才有效</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+8</td>
+<td style="TEXT-ALIGN: left;">添加无序列表项标记</td>
+<td style="TEXT-ALIGN: left;">按一次添加一个</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift +8</td>
+<td style="TEXT-ALIGN: left;">删除行首无序列表项标记</td>
+<td style="TEXT-ALIGN: left;">一次只删除一个</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+\</td>
+<td style="TEXT-ALIGN: left;">插入列</td>
+<td style="TEXT-ALIGN: left;">在文字表中才有效</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+K</td>
+<td style="TEXT-ALIGN: left;">插入空链接标记文本</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+R</td>
+<td style="TEXT-ALIGN: left;">用自定义折叠区包围选中行</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+.</td>
+<td style="TEXT-ALIGN: left;">在当前选定行头部添加“引用”标记符</td>
+<td style="TEXT-ALIGN: left;">可连续执行</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+,</td>
+<td style="TEXT-ALIGN: left;">删除当前选定行头部的“引用”标记符</td>
+<td style="TEXT-ALIGN: left;">可连续执行</td>
+</tr>
+</table>
+</div><h2 class='title' id='title78' title='点击展开/折叠'><span id='header_span78' class='header_span'>◆ </span>13.3.移动光标</h2><script>$(document).ready(function(){$("#title78").click(function(){$("#panel78").toggle();if($("#panel78").is(":hidden")){$("#header_span78").html('◆ ');}else{$("#header_span78").html('◇ ');}});});</script><div class='panel_title_h2' id='panel78' style='display: none;'>
+<table><caption>移动光标</caption>
+<tr><th style="TEXT-ALIGN: center;">快捷键</th><th style="TEXT-ALIGN: center;">功能</th><th style="TEXT-ALIGN: center;">备注</th></tr><tr><td style="TEXT-ALIGN: right;">Alt+J</td>
+<td style="TEXT-ALIGN: left;">左移</td>
+<td style="TEXT-ALIGN: left;">相当于Left键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+Shift+J</td>
+<td style="TEXT-ALIGN: left;">向左选取字符</td>
+<td style="TEXT-ALIGN: left;">相当于 Shift+Left 键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+K</td>
+<td style="TEXT-ALIGN: left;">下移</td>
+<td style="TEXT-ALIGN: left;">相当于Down键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+Shift+K</td>
+<td style="TEXT-ALIGN: left;">向下选取字符</td>
+<td style="TEXT-ALIGN: left;">相当于 Shift+Down 键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+L</td>
+<td style="TEXT-ALIGN: left;">右移</td>
+<td style="TEXT-ALIGN: left;">相当于Right键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+Shift+L</td>
+<td style="TEXT-ALIGN: left;">向右选取字符</td>
+<td style="TEXT-ALIGN: left;">相当于 Shift+Right 键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+I</td>
+<td style="TEXT-ALIGN: left;">上移</td>
+<td style="TEXT-ALIGN: left;">相当于Up键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+Shift+I</td>
+<td style="TEXT-ALIGN: left;">向上选取字符</td>
+<td style="TEXT-ALIGN: left;">相当于 Shift+Up 键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+U</td>
+<td style="TEXT-ALIGN: left;">到行首</td>
+<td style="TEXT-ALIGN: left;">相当于Home键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+Shift+U</td>
+<td style="TEXT-ALIGN: left;">选取到行首</td>
+<td style="TEXT-ALIGN: left;">相当于 Shift+Home 键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Alt+Shift+U</td>
+<td style="TEXT-ALIGN: left;">选取到文件开头</td>
+<td style="TEXT-ALIGN: left;">相当于 Ctrl+Shift+Home 键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+^</td>
+<td style="TEXT-ALIGN: left;">到行首</td>
+<td style="TEXT-ALIGN: left;">相当于Home键（不需要按Shift）</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+O</td>
+<td style="TEXT-ALIGN: left;">到行尾</td>
+<td style="TEXT-ALIGN: left;">相当于End键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Alt+Shift+O</td>
+<td style="TEXT-ALIGN: left;">选取到行尾</td>
+<td style="TEXT-ALIGN: left;">相当于 Shift+End 键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Alt+Shift+O</td>
+<td style="TEXT-ALIGN: left;">选取到行尾</td>
+<td style="TEXT-ALIGN: left;">相当于 Ctrl+Shift+End 键</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+$</td>
+<td style="TEXT-ALIGN: left;">到行尾</td>
+<td style="TEXT-ALIGN: left;">相当于End键（不需要按Shift）</td>
+</tr>
+</table>
+<p>这与J、K、L、I相关的组合按键是根据J、K、L、I这四个按键的键盘位置来决定的——这几个按键在游戏中较多地用作方向键，因而较易掌握。</p>
+</div><h2 class='title' id='title79' title='点击展开/折叠'><span id='header_span79' class='header_span'>◆ </span>13.4.视图</h2><script>$(document).ready(function(){$("#title79").click(function(){$("#panel79").toggle();if($("#panel79").is(":hidden")){$("#header_span79").html('◆ ');}else{$("#header_span79").html('◇ ');}});});</script><div class='panel_title_h2' id='panel79' style='display: none;'>
+<table><caption>视图</caption>
+<tr><th style="TEXT-ALIGN: center;">快捷键</th><th style="TEXT-ALIGN: center;">功能</th><th style="TEXT-ALIGN: center;">备注</th></tr><tr><td style="TEXT-ALIGN: right;">Ctrl++</td>
+<td style="TEXT-ALIGN: left;">寻找下一个一级标题</td>
+<td style="TEXT-ALIGN: left;">一级标题（以#开头的行）</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+-</td>
+<td style="TEXT-ALIGN: left;">寻找上一个一级标题</td>
+<td style="TEXT-ALIGN: left;">一级标题（以#开头的行）</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Alt+Z</td>
+<td style="TEXT-ALIGN: left;">折叠/展开 当前折叠区</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift++</td>
+<td style="TEXT-ALIGN: left;">放大字号</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+-</td>
+<td style="TEXT-ALIGN: left;">缩小字号</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+0</td>
+<td style="TEXT-ALIGN: left;">还原字号</td>
+<td style="TEXT-ALIGN: left;">数字零</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">F5</td>
+<td style="TEXT-ALIGN: left;">编译、预览</td>
+<td style="TEXT-ALIGN: left;">要求先保存文档</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+F5</td>
+<td style="TEXT-ALIGN: left;">按文档中指定的方式分割演示</td>
+<td style="TEXT-ALIGN: left;">如果文档中未定义或定义不全，则按一级标题分割演示</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Shift+F5</td>
+<td style="TEXT-ALIGN: left;">编译并全屏预览</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">[已废弃]F11</td>
+<td style="TEXT-ALIGN: left;">切换全屏</td>
+<td style="TEXT-ALIGN: left;">使编辑区与预览区同时显示，隐藏其它界面元素（或退出全屏状态）</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">[已废弃]Shift+F11</td>
+<td style="TEXT-ALIGN: left;">切换全屏</td>
+<td style="TEXT-ALIGN: left;">使编辑区全屏，隐藏其它界面元素（或退出全屏状态）</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">F1</td>
+<td style="TEXT-ALIGN: left;">显示/隐藏左工具栏</td>
+<td style="TEXT-ALIGN: left;">在键盘左侧。Ctrl+Alt+F1才是显示帮助</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+F1</td>
+<td style="TEXT-ALIGN: left;">重设左工具栏与资源预览区高度</td>
+<td style="TEXT-ALIGN: left;">使这两者同时显示</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">[已废弃]Shift+F1</td>
+<td style="TEXT-ALIGN: left;">左工栏栏最大化</td>
+<td style="TEXT-ALIGN: left;">便于查找较复杂的目录</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">F12</td>
+<td style="TEXT-ALIGN: left;">显示/隐藏右工具栏</td>
+<td style="TEXT-ALIGN: left;">在键盘右侧。</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Shift+F12</td>
+<td style="TEXT-ALIGN: left;">使预览区全屏</td>
+<td style="TEXT-ALIGN: left;">退出全屏只须按 F11或Esc</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">F11>F1</td>
+<td style="TEXT-ALIGN: left;">切换到“普通模式”透视图</td>
+<td style="TEXT-ALIGN: left;">先按 F11 键，放开后再按 F1 键。</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">F11>F2</td>
+<td style="TEXT-ALIGN: left;">切换到“全部显示”透视图</td>
+<td style="TEXT-ALIGN: left;">先按 F11 键，放开后再按 F2 键。</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">F11>F3</td>
+<td style="TEXT-ALIGN: left;">切换到“编辑模式”透视图</td>
+<td style="TEXT-ALIGN: left;">先按 F11 键，放开后再按 F3 键。</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">F11>F4</td>
+<td style="TEXT-ALIGN: left;">切换到“全屏编辑”透视图</td>
+<td style="TEXT-ALIGN: left;">先按 F11 键，放开后再按 F4 键。</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">F11>F5</td>
+<td style="TEXT-ALIGN: left;">切换到“编辑预览”透视图</td>
+<td style="TEXT-ALIGN: left;">先按 F11 键，放开后再按 F5 键。</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">F11>F6</td>
+<td style="TEXT-ALIGN: left;">切换到“全屏预览”透视图</td>
+<td style="TEXT-ALIGN: left;">先按 F11 键，放开后再按 F6 键。</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">F11>F7</td>
+<td style="TEXT-ALIGN: left;">切换到“演讲模式”透视图</td>
+<td style="TEXT-ALIGN: left;">先按 F11 键，放开后再按 F7 键。</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">F11>F8</td>
+<td style="TEXT-ALIGN: left;">切换到“对照模式”透视图</td>
+<td style="TEXT-ALIGN: left;">先按 F11 键，放开后再按 F8 键。</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">F11>F9</td>
+<td style="TEXT-ALIGN: left;">切换到“迷你模式”透视图</td>
+<td style="TEXT-ALIGN: left;">先按 F11 键，放开后再按 F9 键。</td>
+</tr>
+</table>
+</div><h2 class='title' id='title80' title='点击展开/折叠'><span id='header_span80' class='header_span'>◆ </span>13.5.格式</h2><script>$(document).ready(function(){$("#title80").click(function(){$("#panel80").toggle();if($("#panel80").is(":hidden")){$("#header_span80").html('◆ ');}else{$("#header_span80").html('◇ ');}});});</script><div class='panel_title_h2' id='panel80' style='display: none;'>
+<table><caption>格式</caption>
+<tr><th style="TEXT-ALIGN: center;">快捷键</th><th style="TEXT-ALIGN: center;">功能</th><th style="TEXT-ALIGN: center;">备注</th></tr><tr><td style="TEXT-ALIGN: right;">F2</td>
+<td style="TEXT-ALIGN: left;">括起</td>
+<td style="TEXT-ALIGN: left;">用一对括弧括起选定文本</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+`</td>
+<td style="TEXT-ALIGN: left;">代码标记</td>
+<td style="TEXT-ALIGN: left;">用一对反引号括起选定文本</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+I</td>
+<td style="TEXT-ALIGN: left;">倾斜标记</td>
+<td style="TEXT-ALIGN: left;">用一对下划线字符括起选定文本</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+B</td>
+<td style="TEXT-ALIGN: left;">加粗标记</td>
+<td style="TEXT-ALIGN: left;">用两对星号标记括起选定文本</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+U</td>
+<td style="TEXT-ALIGN: left;">删除标记</td>
+<td style="TEXT-ALIGN: left;">在选定文本首尾加&lt;s&gt;标记</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+T</td>
+<td style="TEXT-ALIGN: left;">格式化表格</td>
+<td style="TEXT-ALIGN: left;">将选定文本附近的文本尝试格式化成文字表格</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+F</td>
+<td style="TEXT-ALIGN: left;">格式化文档</td>
+<td style="TEXT-ALIGN: left;">可以设置为“保存时自动格式化”</td>
+</tr>
+</table>
+</div><h2 class='title' id='title81' title='点击展开/折叠'><span id='header_span81' class='header_span'>◆ </span>13.6.其它</h2><script>$(document).ready(function(){$("#title81").click(function(){$("#panel81").toggle();if($("#panel81").is(":hidden")){$("#header_span81").html('◆ ');}else{$("#header_span81").html('◇ ');}});});</script><div class='panel_title_h2' id='panel81' style='display: none;'>
+<table><caption>其它</caption>
+<tr><th style="TEXT-ALIGN: center;">快捷键</th><th style="TEXT-ALIGN: center;">功能</th><th style="TEXT-ALIGN: center;">备注</th></tr><tr><td style="TEXT-ALIGN: right;">Ctrl+E</td>
+<td style="TEXT-ALIGN: left;">打开/关闭 试题编辑</td>
+<td style="TEXT-ALIGN: left;">　</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+{数字键1~6}</td>
+<td style="TEXT-ALIGN: left;">切换所在行的标题层级</td>
+<td style="TEXT-ALIGN: left;">如已是对应层级的标题，则会设置为普通文本</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Alt+{数字键0~9}</td>
+<td style="TEXT-ALIGN: left;">打开历史工作区列表中对应项目</td>
+<td style="TEXT-ALIGN: left;">用于快速切换工作区</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+G</td>
+<td style="TEXT-ALIGN: left;">打开链接的文件或预览链接的图像</td>
+<td style="TEXT-ALIGN: left;">两个操作一个快捷键，由链接类型决定</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+[</td>
+<td style="TEXT-ALIGN: left;">顺序更改当前行的任务列表状态</td>
+<td style="TEXT-ALIGN: left;">非列表项会变成列表项</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+]</td>
+<td style="TEXT-ALIGN: left;">逆序更改当前行的任务列表状态</td>
+<td style="TEXT-ALIGN: left;">非列表项会变为列表项</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+[</td>
+<td style="TEXT-ALIGN: left;">顺序改变当前行所在的任务列表项的任务列表状态</td>
+<td style="TEXT-ALIGN: left;">非列表项会变成列表项</td>
+</tr>
+<tr><td style="TEXT-ALIGN: right;">Ctrl+Shift+]</td>
+<td style="TEXT-ALIGN: left;">逆序改变当前行所在的任务列表项的任务列表状态</td>
+<td style="TEXT-ALIGN: left;">非列表项会变为列表项</td>
+</tr>
+</table>
+<p>[](@PageFooter 页脚) 跳转到<a href="#href">文字超链接</a></p>
+
+</div></div><script>$(document).ready(function() {$('#file_header').click(function() {$('.panel_title_h1,.panel_title_h2,.panel_title_h3,.panel_title_h4,.panel_title_h5,.panel_title_h6').hide();});});</script><script>$(document).ready(function() {$('#file_header').dblclick(function() {$('.panel_title_h1,.panel_title_h2,.panel_title_h3,.panel_title_h4,.panel_title_h5,.panel_title_h6').show();});});</script><script></script></div><hr class="footline"/><div class="foot-comment-area"></div><div class="foot"><p id="author">杨震宇</p></div></div>
+<script language="javascript" type="text/javascript">
+function onDocKeydown(e) {
+e = e || window.event;
+if(e.ctrlKey && e.keyCode==73){　　　//快捷键 Ctrl+I 
+window.location.href='_index.html';
+return;
+}
+}
+document.onkeydown=onDocKeydown;
+</script>
+
+<p style='text-indent:0;'><div><img id="theme_switcher" src="images~/theme_switcher.png" onclick="SwitchTheme()"/></p><script>$(document).ready(LoadUserSelectedTheme());</script></body></html>

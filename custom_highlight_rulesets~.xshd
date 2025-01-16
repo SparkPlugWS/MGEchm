@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Markdown Highlighting"
+                  xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008" >
+	<!--艳红-->
+	<Color name="Heading1" foreground="#FF4C55" fontWeight="bold"/>
+	<!--这里虽然名为“Color”实际不止色彩。-->
+	<!--也可以使用 Brushes 类中定义的一些常见名称。-->
+	
+	<RuleSet ignoreCase="true">
+
+		<!--H1-->
+		<Rule color="Heading1">
+			^[#＃][^#＃].*$
+		</Rule>
+		<!-- End H1 -->
+
+	</RuleSet>
+</SyntaxDefinition>

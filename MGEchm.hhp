@@ -1,0 +1,85 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=$_Chms~\MGEchm
+Contents file=MGEchm.hhc
+Default Font=新宋体,11,1
+Default Window=LunarWin
+Default topic=MGE1\mge1.html
+Display compile progress=Yes
+Full-text search=Yes
+Index file=MGEchm.hhk
+Language=0x804 中文(简体，中国)
+Title=MGEchm
+
+[WINDOWS]
+LunarWin="MGEchm","MGEchm.hhc","MGEchm.hhk","MGE1\mge1.html","MGE1\mge1.html","_index.html","回目录",,,0x23520,,0x4306e,,,,,,,,0
+
+
+[FILES]
+_index.html
+Images~\ask_panel_close.png
+Images~\ask_panel_handler.png
+Images~\comment_dark.png
+Images~\comment_light.png
+Images~\header_icon_dark.png
+Images~\header_icon_light.png
+Images~\menu_dark.png
+Images~\menu_light.png
+Images~\popup_panel_close.png
+Images~\region_e_dark.png
+Images~\region_e_light.png
+Images~\region_i_dark.png
+Images~\region_i_light.png
+Images~\region_q_dark.png
+Images~\region_q_light.png
+Images~\region_w_dark.png
+Images~\region_w_light.png
+Images~\theme_switcher.png
+Images~\_add.png
+Images~\_board.png
+Images~\_book.png
+Images~\_check.png
+Images~\_cloud.png
+Images~\_example.png
+Images~\_exclamation.png
+Images~\_paragraph.png
+Images~\_pencil.png
+Images~\_question.png
+Images~\_warning.png
+Images~\_way.png
+Images~\_arrows\down16.png
+Images~\_arrows\left16.png
+Images~\_arrows\right16.png
+Images~\_arrows\up16.png
+Images~\_slide\slides_handler.png
+Images~\_slide\slide_first_blue.png
+Images~\_slide\slide_first_orange.png
+Images~\_slide\slide_last_blue.png
+Images~\_slide\slide_last_orange.png
+Images~\_slide\slide_next_blue.png
+Images~\_slide\slide_next_orange.png
+Images~\_slide\slide_preview_blue.png
+Images~\_slide\slide_preview_orange.png
+Images~\_stars\black16.png
+Images~\_stars\blue16.png
+Images~\_stars\green16.png
+Images~\_stars\red16.png
+Images~\_stars\white16.png
+Images~\_stars\yellow16.png
+jquery-1.7.0.min.js
+menu_dark.js
+menu_light.js
+lesson_dark.css
+lesson_light.css
+menu_dark.css
+menu_light.css
+presentation_dark.css
+presentation_light.css
+custom_lesson_dark.css
+custom_lesson_light.css
+custom_menu_dark.css
+custom_menu_light.css
+custom_presentation_dark.css
+custom_presentation_light.css
+
+[INFOTYPES]

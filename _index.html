@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- saved from url=(0016)http://localhost -->
+<head>
+<meta name="viewport" content="width=device-width, user-scalable= yes"/>
+<meta http-equiv="Content-Type" content="text/html;charset=GB18030">
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<title>MGEchm目录</title>
+<link id="theme_link" rel="stylesheet" href="./lesson_light.css" type="text/css">
+<link id="custom_theme_link" rel="stylesheet" href="./custom_lesson_light.css" type="text/css"></head>
+<body>
+<p class='fileheader' id='file_header'>MGEchm目录</p><hr />
+<p><a href="_MGEchm.html">&gt; MGEchm</a></p><p>　<a href="MGE1\mge1.html">写在前面</a></p>
+<p>　<a href="MGE1\_MGE1.html">&gt; 魔物娘图鉴1</a></p>
+<p>　　<a href="MGE1\preface.html">序言</a></p>
+<p>　　<a href="MGE1\catalog.html">目录</a></p>
+<p>　　<a href="MGE1\MW.html">魔物</a></p>
+<hr /><div class='foot'><p id='compile_time'>2025/1/16 22:44:40</p></div><br/><br/><script>
+function SwitchTheme()
+{
+    var css = document.getElementById('theme_link');
+    var custom_css = document.getElementById('custom_theme_link');
+    var url;
+    var custom_url;
+    var theme = 'light';
+	if (/.*_dark.css$/.test(css.getAttribute('href'))) theme = 'dark';
+    if (theme == 'light')
+    {
+        url = './lesson_dark.css';
+        custom_url = './custom_lesson_dark.css';
+        window.name = 'dark';
+    }
+    else
+    {
+        url = './lesson_light.css';
+        custom_url = './custom_lesson_light.css';
+        window.name = 'light';
+    }
+    if (css) css.setAttribute('href', url);
+    if (custom_css) custom_css.setAttribute('href', custom_url);
+}
+
+function LoadTheme(new_theme)
+{
+    var css = document.getElementById('theme_link');
+    var custom_css = document.getElementById('custom_theme_link');
+    var url;
+    var custom_url;
+    var theme = 'light';
+	if (/.*_dark.css$/.test(css.getAttribute('href'))) theme = 'dark';
+    if (new_theme && new_theme != theme)
+    {
+        if (new_theme == 'dark')
+        {
+            url = './lesson_dark.css';
+            custom_url = './custom_lesson_dark.css';
+        }
+        else
+        {
+            url = './lesson_light.css';
+            custom_url = './custom_lesson_light.css';
+        }
+        if (css) css.setAttribute('href', url);
+        if (custom_css) custom_css.setAttribute('href', custom_url);
+    }
+}
+
+function LoadUserSelectedTheme()
+{
+    if(window.name == 'dark' || window.name == 'light')
+    {
+        LoadTheme(window.name);
+    }
+}
+</script><div><img id="theme_switcher" src="images~/theme_switcher.png" onclick="SwitchTheme()"/></div><br/><br/><script src="jquery-1.7.0.min.js"></script><script>$(document).ready(LoadUserSelectedTheme());</script></body>
+</html>

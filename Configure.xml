@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <color>light</color>
+  <FormatAfterCompile>False</FormatAfterCompile>
+  <HtmlHeadersCollapse>No</HtmlHeadersCollapse>
+  <AutoNumberHeaders>False</AutoNumberHeaders>
+  <AutoNumberStyle>en_us</AutoNumberStyle>
+  <CompileCodeToFillBlank>False</CompileCodeToFillBlank>
+  <CompilePageMenu>False</CompilePageMenu>
+  <HideExamAnswer>True</HideExamAnswer>
+  <Encoding>gb18030</Encoding>
+  <IE_X_UA_Compatible>8</IE_X_UA_Compatible>
+  <IgnoreEncryptedFiles>True</IgnoreEncryptedFiles>
+  <PreviewCompiledChmFileName>MGEchm</PreviewCompiledChmFileName>
+  <OpenedFiles>
+  </OpenedFiles>
+  <ActiveDocumentFullPath>
+  </ActiveDocumentFullPath>
+  <CollapseFirstSubLevel>True</CollapseFirstSubLevel>
+</Root>
