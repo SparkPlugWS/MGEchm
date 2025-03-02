@@ -9,5 +9,6 @@ public/
 *.hcc
 *.chm
 
-MGE1/模板.md
-MGE1/模板2.md
+src/.vuepress/.cache/
+src/.vuepress/.temp/
+src/.vuepress/dist/
